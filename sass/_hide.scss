@@ -1,0 +1,18 @@
+.hide{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.top-position{
+    height: 7vh;
+    width: 100vw;
+    position: absolute;
+    @include center;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    // background: lightblue;
+}

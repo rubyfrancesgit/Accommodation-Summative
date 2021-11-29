@@ -1,0 +1,52 @@
+.filtered-stays{
+    margin-top: 1rem;
+
+    &__filters{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.filtered-section{
+    width: 100vw;
+    height: 87vh;
+    display: flex;
+
+    &__left{
+        width: 50%;
+        height: 100%;
+        overflow: scroll;
+    }
+
+    &__right{
+        width: 50%;
+        height: 100%;
+        background: lightblue;
+    }
+
+    &__card{
+        width: 90%;
+        height: 20rem;
+        @include center;
+        padding: 1rem;
+    }
+
+    &__img{
+        height: 100%;
+        width: 40%;
+        object-fit: cover;
+    }
+
+    &__info{
+        padding-left: 2rem;
+    }
+
+    &__top-text{
+        display: flex;
+    }
+
+    &__bottom-text{
+        display: flex;
+    }
+}

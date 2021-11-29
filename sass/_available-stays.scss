@@ -1,0 +1,51 @@
+.available-stays {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3rem;
+
+    &__h1{
+        @include heading;
+    }
+
+    &__filters{
+        // min-width: 60vw;
+        // height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__btn{
+        @include filter-btn;
+    }
+}
+
+.available-card-container{
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3rem;
+}
+
+.accommodation-card{
+    width: 18rem;
+    height: 25rem;
+    @include flex-column;
+
+    &__img{
+        height: 70%;
+        width: 90%;
+        object-fit: cover;
+    }
+
+    &__div{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

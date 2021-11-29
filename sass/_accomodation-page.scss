@@ -1,0 +1,42 @@
+.accommodation-page{
+    min-height: 50vh;
+    width: 100vw;
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    &__top-info{
+        display: flex;
+    }
+
+    &__top-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__bookmark-icon{
+        height: 100%;
+    }
+
+    &__stay-img{
+        width: 80%;
+    }
+
+    &__house-icon{
+        width: 5rem;
+    }
+
+    &__utensils-icon{
+        width: 5rem;
+    }
+
+    &__host-img{
+        width: 10rem;
+        border-radius: 360px;
+    }
+
+    &__amenities-icon{
+        width: 10rem;
+    }
+}

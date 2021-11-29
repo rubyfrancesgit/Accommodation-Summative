@@ -1,0 +1,8 @@
+.landing-section {
+    width: 100vw;
+    height: 60vh;
+    @include center;
+    background-image: url("../images/hobbiton.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
