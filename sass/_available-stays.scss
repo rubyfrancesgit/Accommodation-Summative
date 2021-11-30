@@ -6,24 +6,38 @@
     align-items: center;
     padding-left: 3rem;
 
-    &__h1{
+    &__h1 {
         @include heading;
+        margin-right: .5rem;
     }
 
-    &__filters{
-        // min-width: 60vw;
-        // height: 100%;
+    &__filters {
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
 
-    &__btn{
+    &__sort-price {
         @include filter-btn;
+        margin-left: .5rem;
+        margin-right: .5rem;
+    }
+
+    &__accommodation-type {
+        @include filter-btn;
+        margin-left: .5rem;
+        margin-right: .5rem;
+    }
+
+    &__btn {
+        @include filter-btn;
+        @include center;
+        margin-left: .5rem;
+        margin-right: .5rem;
     }
 }
 
-.available-card-container{
+.available-card-container {
     width: 100vw;
     min-height: 50vh;
     display: flex;
@@ -31,18 +45,19 @@
     padding-left: 3rem;
 }
 
-.accommodation-card{
+.accommodation-card {
     width: 18rem;
     height: 25rem;
     @include flex-column;
 
-    &__img{
+    &__img {
         height: 70%;
         width: 90%;
         object-fit: cover;
+        cursor: pointer;
     }
 
-    &__div{
+    &__div {
         width: 90%;
         display: flex;
         justify-content: space-between;

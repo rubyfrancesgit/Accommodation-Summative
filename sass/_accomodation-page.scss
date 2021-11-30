@@ -1,42 +1,56 @@
-.accommodation-page{
+.accommodation-page {
     min-height: 50vh;
     width: 100vw;
     padding-left: 5rem;
     padding-right: 5rem;
+    @include flex-column;
 
-    &__top-info{
+    &__arrow-div {
+        height: 5rem;
+        width: 100%;
         display: flex;
+        justify-content: flex-start;
+        cursor: pointer;
     }
 
-    &__top-left{
+    &__top-info {
+        width: 100vw;
+        height: 7vh;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    &__top-left {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
     }
 
-    &__bookmark-icon{
-        height: 100%;
+    &__bookmark-icon {
+        height: 50%;
     }
 
-    &__stay-img{
+    &__stay-img {
         width: 80%;
     }
 
-    &__house-icon{
-        width: 5rem;
+    &__house-icon {
+        width: 4rem;
     }
 
-    &__utensils-icon{
-        width: 5rem;
+    &__utensils-icon {
+        width: 4rem;
     }
 
-    &__host-img{
+    &__host-img {
         width: 10rem;
         border-radius: 360px;
     }
 
-    &__amenities-icon{
+    &__amenities-icon {
         width: 10rem;
     }
 }

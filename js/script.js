@@ -9,7 +9,7 @@ const filteredStays = document.querySelector('#filteredStays');
 const filteredSection = document.querySelector('#filteredSection');
 const stayNZLogo = document.querySelector('#stayNZLogo');
 const searchIcon = document.querySelector('#searchIcon');
-// const cardImage = document.querySelector('.filtered-section__img');
+const availableArrowIcon = document.querySelector('#availableArrowIcon');
 
 let accommodationObjectArray = [
     {
@@ -834,18 +834,6 @@ function setMarkers(map){
 
 
 // -------------------------------------------------------------
-// Search bar search start
-// -------------------------------------------------------------
-
-
-
-// -------------------------------------------------------------
-// Search bar search end
-// -------------------------------------------------------------
-
-
-
-// -------------------------------------------------------------
 // sort by price start
 // -------------------------------------------------------------
 
@@ -887,7 +875,7 @@ $('#sortPriceFiltered').change(function(){
 
     let sortValue = ($("#sortPriceFiltered").val());
     if(sortValue === 'price-low-high'){
-        accommodationObjectArray.sort(function(a,b){
+        filteredArrayGlobal.sort(function(a,b){
             let itemA = a.price, itemB = b.price;
             if(itemA < itemB){
                 return -1;
@@ -896,10 +884,10 @@ $('#sortPriceFiltered').change(function(){
                 return 1;
             }
         });
-        allFilteredCards();
+        allFilteredArraySearchCards();
     }
     if(sortValue === 'price-high-low'){
-        accommodationObjectArray.sort(function(a,b){
+        filteredArrayGlobal.sort(function(a,b){
             let itemA = a.price, itemB = b.price;
             if(itemA > itemB){
                 return -1;
@@ -908,10 +896,10 @@ $('#sortPriceFiltered').change(function(){
                 return 1;
             }
         });
-        allFilteredCards();
+        allFilteredArraySearchCards();
     }
     if(sortValue === 'reset-sort'){
-        allFilteredCards();
+        allFilteredArraySearchCards();
     }
 });
 
@@ -925,6 +913,7 @@ $('#sortPriceFiltered').change(function(){
 // sort by stay type start
 // -------------------------------------------------------------
 
+// landing page filters start
 $('#accommodationTypeAvaiable').change(function(a, b){
     console.log('stay type sort is clicked');
 
@@ -973,47 +962,49 @@ $('#accommodationTypeAvaiable').change(function(a, b){
         allAvailableCards();
     }
 });
+// landing page filters end
 
-
+//search page filters start
 $('#accommodationTypeFiltered').change(function(a,b){
     let sortValueFiltered = ($('#accommodationTypeFiltered').val());
 
     if(sortValueFiltered === 'house'){
         $('#filteredCardContainer').empty();
-        for(i = 0; i < accommodationObjectArray.length; i++){
-            if(accommodationObjectArray[i].type === 'house'){
-                generateSearchCard(i);
+        for(i = 0; i < filteredArrayGlobal.length; i++){
+            if(filteredArrayGlobal[i].type === 'house'){
+                searchFilteredArrayCards(i);
             }
         }
     }
     if(sortValueFiltered === 'hotel'){
         $('#filteredCardContainer').empty();
-        for(i = 0; i < accommodationObjectArray.length; i++){
-            if(accommodationObjectArray[i].type === 'hotel'){
-                generateSearchCard(i);
+        for(i = 0; i < filteredArrayGlobal.length; i++){
+            if(filteredArrayGlobal[i].type === 'hotel'){
+                searchFilteredArrayCards(i);
             }
         }
     }
     if(sortValueFiltered === 'motel'){
         $('#filteredCardContainer').empty();
-        for(i = 0; i < accommodationObjectArray.length; i++){
-            if(accommodationObjectArray[i].type === 'motel'){
-                generateSearchCard(i);
+        for(i = 0; i < filteredArrayGlobal.length; i++){
+            if(filteredArrayGlobal[i].type === 'motel'){
+                searchFilteredArrayCards(i);
             }
         }
     }
     if(sortValueFiltered === 'hostel'){
         $('#filteredCardContainer').empty();
-        for(i = 0; i < accommodationObjectArray.length; i++){
-            if(accommodationObjectArray[i].type === 'hostel'){
-                generateSearchCard(i);
+        for(i = 0; i < filteredArrayGlobal.length; i++){
+            if(filteredArrayGlobal[i].type === 'hostel'){
+                searchFilteredArrayCards(i);
             }
         }
     }
     if(sortValueFiltered === 'reset-sort'){
-        allFilteredCards();
+        allFilteredArraySearchCards(i);
     }
 });
+//search page filters end
 
 // -------------------------------------------------------------
 // sort by stay type end
@@ -1022,9 +1013,10 @@ $('#accommodationTypeFiltered').change(function(a,b){
 
 
 // -------------------------------------------------------------
-// sort buttons start
+// filter buttons start
 // -------------------------------------------------------------
 
+// landing page buttons start
 $('#breakfastAvailable').click(function(){
     console.log('breakfast clicked');
 
@@ -1087,18 +1079,19 @@ $('#resetAvailable').click(function(){
     $('#availableCardContainer').empty();
     allAvailableCards(); 
 });
+// landing page buttons end
 
 
-
+// search page buttons start
 $('#breakfastFiltered').click(function(){
     console.log('breakfast clicked');
 
     $('#filteredCardContainer').empty();
 
-    for(i = 0; i < accommodationObjectArray.length; i++){
-        for(let j = 0; j < accommodationObjectArray[i].tags.length; j++){
-            if(accommodationObjectArray[i].tags[j] === 'breakfast'){
-                generateSearchCard(i);
+    for(i = 0; i < filteredArrayGlobal.length; i++){
+        for(let j = 0; j < filteredArrayGlobal[i].tags.length; j++){
+            if(filteredArrayGlobal[i].tags[j] === 'breakfast'){
+                searchFilteredArrayCards(i);
             }
         }
     }  
@@ -1109,10 +1102,10 @@ $('#poolFiltered').click(function(){
 
     $('#filteredCardContainer').empty();
 
-    for(i = 0; i < accommodationObjectArray.length; i++){
-        for(let j = 0; j < accommodationObjectArray[i].tags.length; j++){
-            if(accommodationObjectArray[i].tags[j] === 'pool'){
-                generateSearchCard(i);
+    for(i = 0; i < filteredArrayGlobal.length; i++){
+        for(let j = 0; j < filteredArrayGlobal[i].tags.length; j++){
+            if(filteredArrayGlobal[i].tags[j] === 'pool'){
+                searchFilteredArrayCards(i);
             }
         }
     }  
@@ -1123,10 +1116,10 @@ $('#playgroundFiltered').click(function(){
 
     $('#filteredCardContainer').empty();
 
-    for(i = 0; i < accommodationObjectArray.length; i++){
-        for(let j = 0; j < accommodationObjectArray[i].tags.length; j++){
-            if(accommodationObjectArray[i].tags[j] === 'playground'){
-                generateSearchCard(i);
+    for(i = 0; i < filteredArrayGlobal.length; i++){
+        for(let j = 0; j < filteredArrayGlobal[i].tags.length; j++){
+            if(filteredArrayGlobal[i].tags[j] === 'playground'){
+                searchFilteredArrayCards(i);
             }
         }
     }  
@@ -1136,17 +1129,25 @@ $('#resetFiltered').click(function(){
     console.log('reset clicked');
 
     $('#filteredCardContainer').empty();
-    allFilteredCards(); 
+    allFilteredArraySearchCards(); 
 });
+// search page buttons end
 
 // -------------------------------------------------------------
-// sort buttons end
+// filter buttons end
+// -------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------
+// search filtering start
 // -------------------------------------------------------------
 
 function filterFunction(event){
     $('#filteredCardContainer').empty();
     event.preventDefault();
 
+    // array of months so the date can have a written month instead of a number in checkInDetails & checkOutDetails 
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     let msDay = 1000 * 3600 * 24;
@@ -1184,29 +1185,28 @@ function filterFunction(event){
     let dayDifference = difference/msDay;
     console.log(dayDifference);
 
-    // conditions for entering a date
-    if(checkInDate >= checkOutDate){
-        // alert('Check out date must be later than check in date');
-    }
-
     if((checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date')){
         // alert('Please enter both a check in & check out date');
     }
 
-    for(let i = 0; i < accommodationObjectArray.length; i++){
-        if((location === accommodationObjectArray[i].location) && (dayDifference >= accommodationObjectArray[i].minNights) && (dayDifference <= accommodationObjectArray[i].maxNights) && (guests >= accommodationObjectArray[i].minGuest) && (guests <= accommodationObjectArray[i].maxGuest)){
-            generateSearchCard(i);
-        }
+    const filteredArray = accommodationObjectArray.filter(function(accommodationObjectArray){
+        return (location === accommodationObjectArray.location) && (dayDifference >= accommodationObjectArray.minNights) && (dayDifference <= accommodationObjectArray.maxNights) && (guests >= accommodationObjectArray.minGuest) && (guests <= accommodationObjectArray.maxGuest)
     }
+    );
+
+    window.filteredArrayGlobal = filteredArray;
+
+    allFilteredArraySearchCards();
 }
 
 
+// hiding and showing the relevant section so the website 'changes pages'
 $('#searchIcon').click(function(){
     console.log('search clicked');
 
+    // adding the search bar to the nav bar
     $('#searchBar').append( $('#navSearchBar') );
-    
-    // topNav.classList.add('hide');
+
     landingSection.classList.add('top-position');
     landingSection.classList.remove('landing-section');
     availableStays.classList.add('hide');
@@ -1214,22 +1214,19 @@ $('#searchIcon').click(function(){
 
     filteredStays.classList.remove('hide');
     filteredSection.classList.remove('hide');
-    // searchNav.classList.remove('hide');
-
     
 });
 
-// $('#stayNZLogo').click(function(){
-//     filteredStays.classList.add('hide');
-//     filteredSection.classList.add('hide');
-//     landingSection.classList.add('landing-section');
-
-//     landingSection.classList.remove('top-position');
-//     availableStays.classList.remove('hide');
-//     availableCardContainer.classList.remove('hide');
-// });
+// -------------------------------------------------------------
+// search filtering end
+// -------------------------------------------------------------
 
 
+// -------------------------------------------------------------
+// creates accommodation cards on landing page & search page - start
+// -------------------------------------------------------------
+
+// prepares card container and calls generateAvailableCard function to append all options
 function allAvailableCards(){
     $('#availableCardContainer').empty();
     for(let i = 0; i < accommodationObjectArray.length; i++){
@@ -1237,6 +1234,7 @@ function allAvailableCards(){
     }
 }
 
+// prepares card container and calls generateAvailableCard function to append all options
 function allFilteredCards(){
     $('#filteredCardContainer').empty();
     for(let i = 0; i < accommodationObjectArray.length; i++){
@@ -1244,7 +1242,7 @@ function allFilteredCards(){
     }
 }
 
-
+// generates the cards that appear on the landing page, appends all relevent information
 function generateAvailableCard(x){
     $('#availableCardContainer').append(
         `
@@ -1262,60 +1260,154 @@ function generateAvailableCard(x){
     );
 }
 
+// generates the cards that appear when users have searched, appends all relevent information
 function generateSearchCard(x){
     $('#filteredCardContainer').append(
         `
-        <div class="filtered-section__card">
-            <img class="filtered-section__img" src="${accommodationObjectArray[x].photo}" alt="">
-            <div class="filtered-section__info">
-                <div class="filtered-section__top-text">
-                    <div class="filtered-section__top-text-left">
-                        <p class="filtered-section__stay-type">${accommodationObjectArray[x].type}</p>
-                        <p class="filtered-section__stay-name">${accommodationObjectArray[x].name}, ${accommodationObjectArray[x].location}</p>
+            <div class="filtered-section__card">
+                <img class="filtered-section__img" src="${accommodationObjectArray[x].photo}" alt="">
+                <div class="filtered-section__info">
+                    <div class="filtered-section__top-text">
+                        <div class="filtered-section__top-text-left">
+                            <p class="filtered-section__stay-type">${accommodationObjectArray[x].type}</p>
+                            <p class="filtered-section__stay-name">${accommodationObjectArray[x].name}, ${accommodationObjectArray[x].location}</p>
+                        </div>
+                        <img class="filtered-section__bookmark" src="" alt="">
                     </div>
-                    <img class="filtered-section__bookmark" src="" alt="">
-                </div>
-                <div class="filtered-section__middle-text">
-                    <p class="filtered-section__details">${accommodationObjectArray[x].cardDetails}</p>
-                    <p class="filtered-section__amenities">${accommodationObjectArray[x].cardAmenities}</p>
-                </div>
-                <div class="filtered-section__bottom-text">
-                    <div class="filtered-section__rating-div">
-                        <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
-                        <p class="filtered-section__rating">${accommodationObjectArray[x].rating}</p>
+                    <div class="filtered-section__middle-text">
+                        <p class="filtered-section__details">${accommodationObjectArray[x].cardDetails}</p>
+                        <p class="filtered-section__amenities">${accommodationObjectArray[x].cardAmenities}</p>
                     </div>
-                    <p class="filtered-section__price"><b>$</b>${accommodationObjectArray[x].price} / night. Max nights ${accommodationObjectArray[x].maxNights}</p>
+                    <div class="filtered-section__bottom-text">
+                        <div class="filtered-section__rating-div">
+                            <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
+                            <p class="filtered-section__rating">${accommodationObjectArray[x].rating}</p>
+                        </div>
+                        <p class="filtered-section__price"><b>$</b>${accommodationObjectArray[x].price} / night. Max nights ${accommodationObjectArray[x].maxNights}</p>
+                    </div>
                 </div>
             </div>
-        </div>
         `
-    )
+    );
 }
 
-// function generateAccommodationPage(){
-//     $('.accommodation-card__img').click(function(){
-//         console.log(this.src);
-//         // for(let i = 0; i < accommodationObjectArray.length; i ++){
-//         //     if(parseInt)
-//         // }
-//     });
-// }
+// generates the cards that appear when users have searched, appends all relevent information from the filteredArray
+function allFilteredArraySearchCards(){
+    $('#filteredCardContainer').empty();
 
+    for(let i = 0; i < filteredArrayGlobal.length; i++){
+        $('#filteredCardContainer').append(
+            `
+                <div class="filtered-section__card">
+                    <img class="filtered-section__img" src="${filteredArrayGlobal[i].photo}" alt="">
+                    <div class="filtered-section__info">
+                        <div class="filtered-section__top-text">
+                            <div class="filtered-section__top-text-left">
+                                <p class="filtered-section__stay-type">${filteredArrayGlobal[i].type}</p>
+                                <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
+                            </div>
+                            <img class="filtered-section__bookmark" src="" alt="">
+                        </div>
+                        <div class="filtered-section__middle-text">
+                            <p class="filtered-section__details">${filteredArrayGlobal[i].cardDetails}</p>
+                            <p class="filtered-section__amenities">${filteredArrayGlobal[i].cardAmenities}</p>
+                        </div>
+                        <div class="filtered-section__bottom-text">
+                            <div class="filtered-section__rating-div">
+                                <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
+                                <p class="filtered-section__rating">${filteredArrayGlobal[i].rating}</p>
+                            </div>
+                            <p class="filtered-section__price"><b>$</b>${filteredArrayGlobal[i].price} / night. Max nights ${filteredArrayGlobal[i].maxNights}</p>
+                        </div>
+                    </div>
+                </div>
+            `
+        );
+    }
+}
+
+function searchFilteredArrayCards(i){
+    $('#filteredCardContainer').empty();
+    $('#filteredCardContainer').append(
+        `
+            <div class="filtered-section__card">
+                <img class="filtered-section__img" src="${filteredArrayGlobal[i].photo}" alt="">
+                <div class="filtered-section__info">
+                    <div class="filtered-section__top-text">
+                        <div class="filtered-section__top-text-left">
+                            <p class="filtered-section__stay-type">${filteredArrayGlobal[i].type}</p>
+                            <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
+                        </div>
+                        <img class="filtered-section__bookmark" src="" alt="">
+                    </div>
+                    <div class="filtered-section__middle-text">
+                        <p class="filtered-section__details">${filteredArrayGlobal[i].cardDetails}</p>
+                        <p class="filtered-section__amenities">${filteredArrayGlobal[i].cardAmenities}</p>
+                    </div>
+                    <div class="filtered-section__bottom-text">
+                        <div class="filtered-section__rating-div">
+                            <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
+                            <p class="filtered-section__rating">${filteredArrayGlobal[i].rating}</p>
+                        </div>
+                        <p class="filtered-section__price"><b>$</b>${filteredArrayGlobal[i].price} / night. Max nights ${filteredArrayGlobal[i].maxNights}</p>
+                    </div>
+                </div>
+            </div>
+        `
+    );
+}
+
+
+// -------------------------------------------------------------
+// creates accommodation cards on landing page - end
+// -------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------
+// creates the accommodation pages for each stay - start
+// -------------------------------------------------------------
+
+// listens for which card has been clicked, the calls the accommodationPageGenerator to append the revelant information to the accommodation page
 $('.accommodation-card__img').click(function(){
-    // console.log(this.src);
     for(let i = 0; i < accommodationObjectArray.length; i ++){
         if(parseInt(this.id) === accommodationObjectArray[i].id){
-            console.log(this.id);
-            accommodationPageGeneratoe(i);
+            accommodationPageGenerator(i);
         }
     }
+
+    // hiding the landing page sections and adding the search bar to the nav bar to transform webpage into the relevant accommodation page
+    landingSection.classList.add('top-position');
+    landingSection.classList.remove('landing-section');
+    availableStays.classList.add('hide');
+    availableCardContainer.classList.add('hide');
+
+    // changing the id of the back arrow as there are two different ways the accommodation page can be accessed, so which way the page was accessed changes what needs to happen when the back arrow is clicked
+    document.getElementById('arrowIcon').id = 'availableArrowIcon';
+
+    $('#availableArrowIcon').click(function(){
+        console.log('back arrow clicked');
+
+        // reverting the classList back to the landing page set up styling
+        landingSection.classList.remove('top-position');
+        landingSection.classList.add('landing-section');
+        availableStays.classList.remove('hide');
+        availableCardContainer.classList.remove('hide');
+
+        // emptying the accommodation page so it's not visible from the landing page set up
+        $('#accommodationPage').empty();
+    });
+
 });
 
-
-function accommodationPageGeneratoe(x){
-
+// generates the accommodation stay page, appends all relevent information
+function accommodationPageGenerator(x){
+    $('#accommodationPage').empty();
     $('#accommodationPage').append(
         `
+            <div class="accommodation-page__arrow-div">
+                <img class="accommodation-page__arrow-icon" id="arrowIcon" src="./images/arrow.svg" alt="arrow icon">
+            </div>
             <div class="accommodation-page__top-info">
                 <div class="accommodation-page__top-left">
                     <p class="accommodation-page__stay-name">${accommodationObjectArray[x].name}</p>
@@ -1386,89 +1478,12 @@ function accommodationPageGeneratoe(x){
                 </div>
             </div>
         `
-    )
+    );
 }
 
+// -------------------------------------------------------------
+// creates accommodation pages for each stay - end
+// -------------------------------------------------------------
 
-// function generateAccommodationPage(){
-//     console.log('generateAccommodationPage clicked');
-
-//     for(let x = 0; x < accommodationObjectArray.length; x++){
-//         $('#accommodationPage').append(
-//             `
-//                 <div class="accommodation-page__top-info">
-//                     <div class="accommodation-page__top-left">
-//                         <p class="accommodation-page__stay-name">${accommodationObjectArray[x].name}</p>
-//                         <p class="accommodation-page__stay-location">${accommodationObjectArray[x].location}</p>
-//                     </div>
-//                     <img class="accommodation-page__bookmark-icon" src="./images/bookmark.svg" alt="bookmark icon">
-//                 </div>
-                
-//                 <img class="accommodation-page__stay-img" src="${accommodationObjectArray[x].photo}" alt="${accommodationObjectArray[x].name}">
-                
-//                 <div class="accommodation-page__stay-info">
-//                     <div class="accommodation-page__stay-info-left">
-//                         <div class="accommodation-page__stay-type-div">
-//                             <img class="accommodation-page__house-icon" src="./images/home-solid.svg" alt="home icon">
-//                             <p  class="accommodation-page__stay-type">${accommodationObjectArray[x].type}</p>
-//                         </div>
-                
-//                         <div class="accommodation-page__description-div">
-//                             <p class="accommodation-page__description-heading">Description</p>
-//                             <p class="accommodation-page__description-text">${accommodationObjectArray[x].description}</p>
-//                         </div>
-                
-//                         <div class="accommodation-page__sleeping-div">
-//                             <p class="accommodation-page__sleeping-heading">Sleeping arrangements</p>
-//                             ${accommodationObjectArray[x].sleepingArrangements}
-//                         </div>
-//                     </div>
-//                     <div class="accommodation-page__stay-info-right">
-//                         <div class="accommodation-page__booking-div">
-                
-//                             <select class="accommodation-page__breakfast" name="breakfast" id="breakfast">
-//                                 <option value="breakfast">Breakfast</option>
-//                                 <option value="">${accommodationObjectArray[x].mealOption}</option>
-//                             </select>
-//                             <button class="accommodation-page__make-booking" id="makeBooking">Make Booking</button>
-//                         </div>
-//                     </div>
-//                 </div>
-                
-//                 <div class="accommodation-page__extra-info">
-//                     <div class="accommodation-page__on-offer-div">
-//                         <p class="accommodation-page__on-offer-heading">What's on offer</p>
-//                         <div class="accommodation-page__amenities-div" id="amenitiesDiv">${accommodationObjectArray[x].onOffer}</div>
-//                     </div>
-                
-//                     <div class="accommodation-page__meal-div">
-//                         <p class="accommodation-page__meal-heading">Meal options</p>
-//                         <div class="accommodation-page__meal-info">
-//                             <img class="accommodation-page__utensils-icon" src="./images/utensils-solid.svg" alt="utensils icon">
-//                             <p class="accommodation-page__meal-text">${accommodationObjectArray[x].mealOption}</p>
-//                         </div>
-//                     </div>
-//                 </div>
-                
-//                 <div class="accommodation-page__map-div">
-//                     <p class="accommodation-page__map-location-name">${accommodationObjectArray[x].location}</p>
-//                     <div class="accommodation-page__map" id="accommodationMap"></div>
-//                 </div>
-                
-//                 <div class="accommodation-page__contact-div">
-//                     <div class="accommodation-page__contact-div-top">
-//                         <img class="accommodation-page__host-img" src="${accommodationObjectArray[x].hostImg}" alt="">
-//                         <div class="accommodation-page__contact-div-info">
-//                             <p class="accommodation-page__contact-div-heading">Meet your host</p>
-//                             <button class="accommodation-page__contact-btn">Contact</button>
-//                         </div>
-//                         <p class="accommodation-page__host-info">${accommodationObjectArray[x].hostInfo}</p>
-//                     </div>
-//                 </div>
-//             `
-//         )
-//     }
-// }
 
 searchIcon.addEventListener('click', filterFunction);
-// cardImage.addEventListener('click', generateAccommodationPage);

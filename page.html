@@ -1,0 +1,72 @@
+<div class="accommodation-page__arrow-div">
+    <img class="accommodation-page__arrow-icon" id="arrowIcon" src="./images/arrow.svg" alt="arrow icon">
+</div>
+<div class="accommodation-page__top-info">
+    <div class="accommodation-page__top-left">
+        <p class="accommodation-page__stay-name">${accommodationObjectArray[x].name}</p>
+        <p class="accommodation-page__stay-location">${accommodationObjectArray[x].location}</p>
+    </div>
+    <img class="accommodation-page__bookmark-icon" src="./images/bookmark.svg" alt="bookmark icon">
+</div>
+
+<img class="accommodation-page__stay-img" src="${accommodationObjectArray[x].photo}" alt="${accommodationObjectArray[x].name}">
+
+<div class="accommodation-page__stay-info">
+    <div class="accommodation-page__stay-info-left">
+        <div class="accommodation-page__stay-type-div">
+            <img class="accommodation-page__house-icon" src="./images/home-solid.svg" alt="home icon">
+            <p  class="accommodation-page__stay-type">${accommodationObjectArray[x].type}</p>
+        </div>
+
+        <div class="accommodation-page__description-div">
+            <p class="accommodation-page__description-heading">Description</p>
+            <p class="accommodation-page__description-text">${accommodationObjectArray[x].description}</p>
+        </div>
+
+        <div class="accommodation-page__sleeping-div">
+            <p class="accommodation-page__sleeping-heading">Sleeping arrangements</p>
+            ${accommodationObjectArray[x].sleepingArrangements}
+        </div>
+    </div>
+    <div class="accommodation-page__stay-info-right">
+        <div class="accommodation-page__booking-div">
+
+            <select class="accommodation-page__breakfast" name="breakfast" id="breakfast">
+                <option value="breakfast">Breakfast</option>
+                <option value="">${accommodationObjectArray[x].mealOption}</option>
+            </select>
+            <button class="accommodation-page__make-booking" id="makeBooking">Make Booking</button>
+        </div>
+    </div>
+</div>
+
+<div class="accommodation-page__extra-info">
+    <div class="accommodation-page__on-offer-div">
+        <p class="accommodation-page__on-offer-heading">What's on offer</p>
+        <div class="accommodation-page__amenities-div" id="amenitiesDiv">${accommodationObjectArray[x].onOffer}</div>
+    </div>
+
+    <div class="accommodation-page__meal-div">
+        <p class="accommodation-page__meal-heading">Meal options</p>
+        <div class="accommodation-page__meal-info">
+            <img class="accommodation-page__utensils-icon" src="./images/utensils-solid.svg" alt="utensils icon">
+            <p class="accommodation-page__meal-text">${accommodationObjectArray[x].mealOption}</p>
+        </div>
+    </div>
+</div>
+
+<div class="accommodation-page__map-div">
+    <p class="accommodation-page__map-location-name">${accommodationObjectArray[x].location}</p>
+    <div class="accommodation-page__map" id="accommodationMap"></div>
+</div>
+
+<div class="accommodation-page__contact-div">
+    <div class="accommodation-page__contact-div-top">
+        <img class="accommodation-page__host-img" src="${accommodationObjectArray[x].hostImg}" alt="">
+        <div class="accommodation-page__contact-div-info">
+            <p class="accommodation-page__contact-div-heading">Meet your host</p>
+            <button class="accommodation-page__contact-btn">Contact</button>
+        </div>
+        <p class="accommodation-page__host-info">${accommodationObjectArray[x].hostInfo}</p>
+    </div>
+</div>
