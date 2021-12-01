@@ -15,6 +15,7 @@
 
     </head>
 
+
     <body>
 
         <nav class="top-nav" id="topNav">
@@ -34,17 +35,15 @@
                         <option value="Taupo">Taupo</option>
                     </select>
                 </div>
-                <div class="search-bar__check-in-div search-bar__div">
+                <div class="search-bar__check-in-div search-bar__div" id="searchBarCheckIn">
                     <label class="search-bar__label" for="check-in">Check-in</label>
-                    <!-- come back and check the proper way to do jquery ui date picker -->
                     <input class="search-bar__input" type="text" name="check-in" id="searchCheckIn" placeholder="Add dates">
                 </div>
-                <div class="search-bar__check-out-div search-bar__div">
+                <div class="search-bar__check-out-div search-bar__div" id="searchBarCheckOut">
                     <label class="search-bar__label" for="check-out">Check-out</label>
-                    <!-- come back and check the proper way to do jquery ui date picker -->
                     <input class="search-bar__input" type="text" name="check-out" id="searchCheckOut" placeholder="Add dates">
                 </div>
-                <div class="search-bar__guests-div search-bar__div">
+                <div class="search-bar__guests-div search-bar__div"  id="searchBarGuests">
                     <label class="search-bar__label" for="guests">Guests</label>
                     <select class="search-bar__guest-select" name="guests" id="guestSelect">
                         <option value="Add guests">Add guests</option>
@@ -119,6 +118,24 @@
 
         <section class="accommodation-page" id="accommodationPage">
         </section>
+
+        <div class="modal" id="exampleModalCenter" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+        </div>
 
 
         <!-- jquery internal document link -->

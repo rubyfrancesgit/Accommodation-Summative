@@ -29,20 +29,53 @@
         align-items: flex-start;
     }
 
+    &__stay-name {
+        @include heading;
+        margin: 0px;
+    }
+
+    &__stay-location {
+        color: $light-grey;
+    }
+
     &__bookmark-icon {
-        height: 50%;
+        height: 25%;
     }
 
     &__stay-img {
-        width: 80%;
+        width: 100%;
+        height: 35vh;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    &__stay-type-div {
+        display: flex;
+        align-items: center;
+    }
+
+    &__stay-type {
+        @include heading;
+        margin: 0px;
     }
 
     &__house-icon {
-        width: 4rem;
+        width: 3rem;
+    }
+
+    &__bedroom-number {
+        margin: 0px;
+    }
+
+    &__booking-div {
+        @include flex-column;
+        align-items: flex-start;
+        border: 2px solid $light-grey;
+        border-radius: 5px;
     }
 
     &__utensils-icon {
-        width: 4rem;
+        width: 3rem;
     }
 
     &__host-img {

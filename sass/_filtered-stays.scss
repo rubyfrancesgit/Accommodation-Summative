@@ -30,12 +30,14 @@
         height: 20rem;
         @include center;
         padding: 1rem;
+        // z-index: 1000;
     }
 
     &__img{
         height: 100%;
         width: 40%;
         object-fit: cover;
+        cursor: pointer;
     }
 
     &__info{
