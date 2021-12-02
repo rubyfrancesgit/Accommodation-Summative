@@ -35,6 +35,12 @@
     border-radius: 360px;
 }
 
+@mixin white-filter-select {
+    border: 1px solid $light-grey;
+    border-radius: $curved-border;
+    background: white;
+}
+
 @mixin available-cards {
     background: white;
     display: flex;

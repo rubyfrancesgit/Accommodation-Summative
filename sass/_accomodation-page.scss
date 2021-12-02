@@ -1,9 +1,22 @@
 .accommodation-page {
     min-height: 50vh;
     width: 100vw;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-top: 2rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
     @include flex-column;
+
+    &__heading-2 {
+        @include heading;
+        font-size: 1.5rem;
+        margin: 0px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__p {
+        @include text;
+    }
 
     &__arrow-div {
         height: 5rem;
@@ -14,12 +27,10 @@
     }
 
     &__top-info {
-        width: 100vw;
+        width: 100%;
         height: 7vh;
         display: flex;
         justify-content: space-between;
-        padding-left: 5rem;
-        padding-right: 5rem;
     }
 
     &__top-left {
@@ -27,6 +38,23 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+    }
+
+    &__stay-info {
+        padding-top: 2rem;
+        width: 100%;
+    }
+
+    &__stay-info-left {
+        width: 50%;
+        float: left;
+    }
+
+    &__stay-info-right {
+        width: 50%;
+        float: right;
+        display: flex;
+        justify-content: flex-end;
     }
 
     &__stay-name {
@@ -44,9 +72,11 @@
 
     &__stay-img {
         width: 100%;
-        height: 35vh;
+        height: 55vh;
         object-fit: cover;
-        border-radius: 5px;
+        border-radius: $curved-border;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     &__stay-type-div {
@@ -61,17 +91,89 @@
 
     &__house-icon {
         width: 3rem;
+        margin-right: 1rem;
+    }
+
+    &__sleeping-container {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+
+    &__sleeping-arrangement-div {
+        width: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        border: 1px solid $light-grey;
+        border-radius: $curved-border;
     }
 
     &__bedroom-number {
+        font-weight: bold;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    &__bed-type {
         margin: 0px;
     }
 
+    &__bed-img {
+        width: 3rem;
+    }
+
     &__booking-div {
+        width: 60%;
         @include flex-column;
         align-items: flex-start;
-        border: 2px solid $light-grey;
-        border-radius: 5px;
+        padding: 2rem;
+        border: 1px solid $light-grey;
+        border-radius: $curved-border;
+    }
+
+    &__check-in {
+        width: 100%;
+        height: 2rem;
+        @include white-filter-select;
+        margin-bottom: .5rem;
+    }
+
+    &__check-out {
+        width: 100%;
+        height: 2rem;
+        @include white-filter-select;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    &__guests {
+        width: 100%;
+        height: 2rem;
+        @include white-filter-select;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    &__breakfast {
+        width: 100%;
+        height: 2rem;
+        @include white-filter-select;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    &__make-booking {
+        width: 100%;
+        height: 2rem;
+        height: 2.5rem;
+        color: white;
+        background: black;
+        border-radius: $curved-border;
+        margin-top: .5rem;
+        border: none;
     }
 
     &__utensils-icon {
@@ -83,7 +185,77 @@
         border-radius: 360px;
     }
 
+    &__on-offer-div {
+        width: 80%;
+        @include flex-column;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    &__amenities-div {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__amenities {
+        width: 6rem;
+        @include center;
+        justify-content: space-between;
+    }
+
     &__amenities-icon {
-        width: 10rem;
+        width: 3rem;
+        height: 5rem;
+    }
+
+    &__utensils-icon {
+        height: 3rem;
+        margin-right: .7rem;
+    }
+
+    &__extra-info {
+        width: 100%;
+        padding-top: 2rem;
+        @include flex-column;
+        align-items: flex-start;
+    }
+
+    &__meal-div {
+        padding-top: 2rem;
+    }
+
+    &__map-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__contact-div-top {
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 1rem;
+    }
+
+    &__contact-div {
+        @include flex-column;
+        justify-content: flex-start;
+    }
+
+    &__host-img {
+        height: 7rem;
+        width: 7rem;
+        padding-right: 1rem;
+    }
+
+    &__contact-btn {
+        width: 7rem;
+        @include text;
+        @include white-filter-select;
+        // border-radius: 1px;
+        padding: .5rem;
     }
 }

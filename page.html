@@ -97,3 +97,65 @@
         <p class="accommodation-page__host-info">${accommodationObjectArray[x].hostInfo}</p>
     </div>
 </div>
+
+
+<!-- modal -->
+
+<div class="modal__text-div">
+    <p class="modal__confirmation-heading"></p>
+    <p class="modal__p-grey"></p>
+</div>
+<!-- filtered card start -->
+<div class="filtered-section__card">
+    <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="">
+    <div class="filtered-section__info">
+        <div class="filtered-section__top-text">
+            <div class="filtered-section__top-text-left">
+                <p class="filtered-section__stay-type">${filteredArrayGlobal[i].type}</p>
+                <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
+            </div>
+            <img class="filtered-section__bookmark" src="" alt="">
+        </div>
+        <div class="filtered-section__middle-text">
+            <p class="filtered-section__details">${filteredArrayGlobal[i].cardDetails}</p>
+            <p class="filtered-section__amenities">${filteredArrayGlobal[i].cardAmenities}</p>
+        </div>
+        <div class="filtered-section__bottom-text">
+            <div class="filtered-section__rating-div">
+                <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
+                <p class="filtered-section__rating">${filteredArrayGlobal[i].rating}</p>
+            </div>
+            <p class="filtered-section__price"><b>$</b>${filteredArrayGlobal[i].price} / night. Max nights ${filteredArrayGlobal[i].maxNights}</p>
+        </div>
+    </div>
+</div>
+<!-- filtered card end -->
+<div class="modal__booking-info">
+    <div class="modal__info-div">
+        <p class="modal__p-grey"></p>
+        <p class="modal__p"></p>
+    </div>
+    <div class="modal__info-div">
+        <p class="modal__p-grey"></p>
+        <p class="modal__p"></p>
+    </div>
+    <div class="modal__info-div">
+        <p class="modal__p-grey"></p>
+        <p class="modal__p"></p>
+    </div>
+    <div class="modal__info-div">
+        <p class="modal__p-grey"></p>
+        <p class="modal__p"></p>
+    </div>
+</div>
+<div class="modal__price-breakdown-div">
+    <p class="modal__price-breakdown-p"></p>
+    <div class="modal__price-div">
+        <p class="modal__p"></p>
+        <p class="modal__p"></p>
+    </div>
+    <div class="modal__price-total-div">
+        <p class="modal__price-breakdown-p"></p>
+        <p class="modal__price-breakdown-p"></p>
+    </div>
+</div>

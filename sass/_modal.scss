@@ -1,0 +1,34 @@
+.modal-content {
+    padding: 3rem;
+    @include center;
+}
+
+.modal {
+    &__text-div {
+        @include center;
+    }
+
+    &__p-grey {
+        @include text;
+        color: $grey;
+    }
+
+    &__p {
+        @include text;
+    }
+
+    &__confirmation-heading {
+        @include heading;
+    }
+
+    &__booking-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__price-breakdown-div {
+        @include white-filter-select;
+        @include flex-column;
+    }
+}
