@@ -7858,11 +7858,13 @@ body {
   .search-bar__location-select {
     font-family: "Roboto", sans-serif;
     font-size: 1.2rem;
+    color: #848484;
     background: none;
     border: none; }
   .search-bar__guest-select {
     font-family: "Roboto", sans-serif;
     font-size: 1.2rem;
+    color: #848484;
     background: none;
     border: none; }
   .search-bar__location-div {
@@ -7987,12 +7989,21 @@ body {
     height: 70%;
     width: 90%;
     object-fit: cover;
-    cursor: pointer; }
+    cursor: pointer;
+    border-radius: 5px; }
   .accommodation-card__div {
     width: 90%;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: flex-start; }
+  .accommodation-card__name {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    margin: 0; }
+  .accommodation-card__location {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    color: #848484; }
 
 .filtered-stays {
   margin-top: 1rem;
@@ -8001,7 +8012,8 @@ body {
   .filtered-stays__filters {
     display: flex;
     justify-content: flex-start;
-    align-items: center; }
+    align-items: center;
+    padding-bottom: 1rem; }
 
 .filtered-section {
   width: 100vw;
@@ -8017,7 +8029,7 @@ body {
     height: 100%;
     background: lightblue; }
   .filtered-section__card {
-    width: 90%;
+    width: 100%;
     height: 20rem;
     display: flex;
     justify-content: center;
@@ -8043,18 +8055,26 @@ body {
     align-items: flex-start;
     padding-left: 2rem; }
   .filtered-section__top-text {
-    display: flex; }
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
   .filtered-section__stay-name {
     font-family: "Roboto", sans-serif;
     font-size: 1.2rem;
     font-size: 1.5rem;
     margin: 0px; }
+  .filtered-section__bookmark {
+    height: 1rem; }
   .filtered-section__bottom-text {
+    width: 100%;
     display: flex;
     justify-content: space-between; }
   .filtered-section__rating-div {
     display: flex; }
+  .filtered-section__rating {
+    margin: 0px; }
   .filtered-section__star {
+    height: 1rem;
     padding-right: .5rem; }
 
 .accommodation-page {
@@ -8135,14 +8155,15 @@ body {
   .accommodation-page__sleeping-container {
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-top: 1rem; }
   .accommodation-page__sleeping-arrangement-div {
-    width: 10rem;
+    width: 11rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
+    margin-right: 2rem;
     border: 1px solid #C4C4C4;
     border-radius: 5px; }
   .accommodation-page__bedroom-number {
@@ -8155,6 +8176,7 @@ body {
     width: 3rem; }
   .accommodation-page__booking-div {
     width: 60%;
+    max-width: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -8219,13 +8241,14 @@ body {
   .accommodation-page__amenities-div {
     width: 50%;
     display: flex;
-    justify-content: space-between; }
+    justify-content: flex-start; }
   .accommodation-page__amenities {
     width: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-right: 3rem; }
   .accommodation-page__amenities-icon {
     width: 3rem;
     height: 5rem; }
@@ -8254,15 +8277,16 @@ body {
     justify-content: flex-start;
     padding-bottom: 1rem; }
   .accommodation-page__contact-div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    justify-content: flex-start; }
+    align-items: flex-start; }
   .accommodation-page__host-img {
     height: 7rem;
     width: 7rem;
-    padding-right: 1rem; }
+    margin-right: 1rem; }
   .accommodation-page__contact-btn {
     width: 7rem;
     font-family: "Roboto", sans-serif;
@@ -8290,30 +8314,42 @@ body {
   z-index: 100; }
 
 .modal-content {
-  padding: 3rem;
+  padding: 5rem;
+  width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.modal__text-div {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.modal__heading-2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  font-size: 1.5rem; }
 .modal__p-grey {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
-  color: #848484; }
+  color: #848484;
+  margin: 0px; }
 .modal__p {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem; }
+.modal__text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2rem; }
 .modal__confirmation-heading {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-size: 2rem; }
+  font-size: 2rem;
+  margin: 0px; }
 .modal__booking-info {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  margin-top: 2rem; }
 .modal__price-breakdown-div {
   border: 1px solid #C4C4C4;
   border-radius: 5px;
@@ -8321,6 +8357,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-top: 2rem; }
+.modal__breakfast-price-div {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #C4C4C4;
+  margin-bottom: 1rem; }
+.modal__price-total-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

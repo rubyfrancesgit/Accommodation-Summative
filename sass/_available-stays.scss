@@ -55,12 +55,23 @@
         width: 90%;
         object-fit: cover;
         cursor: pointer;
+        border-radius: $curved-border;
     }
 
     &__div {
         width: 90%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+    }
+
+    &__name {
+        @include text;
+        margin: 0;
+    }
+
+    &__location {
+        @include text;
+        color: $grey;
     }
 }

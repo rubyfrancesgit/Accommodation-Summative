@@ -13,6 +13,7 @@ const filteredSection = document.querySelector('#filteredSection');
 const stayNZLogo = document.querySelector('#stayNZLogo');
 const searchIcon = document.querySelector('#searchIcon');
 const availableArrowIcon = document.querySelector('#availableArrowIcon');
+const accommodationPage = document.querySelector('#accommodationPage');
 // -------------------------------------------------------------
 // Global variables start
 // -------------------------------------------------------------
@@ -31,6 +32,7 @@ let accommodationObjectArray = [
         type: 'house',
         price: 180,
         photo: './images/batch-house.png',
+        altText: 'blue summer batch house',
         tags: ['parking', 'pool'],
         cardDetails: '4 guests, 2 bedrooms, 2 beds, 1 bath',
         cardAmenities: 'Breakfast, Pool',
@@ -78,6 +80,7 @@ let accommodationObjectArray = [
         type: 'hotel',
         price: 157,
         photo: './images/seaview-hotel.png',
+        altText: 'hotel bath with sea view',
         tags: ['breakfast', 'pool'],
         cardDetails: '2 guests, 1 bedroom, 1 bed, 1 bath',
         cardAmenities: 'Breakfast, Pool',
@@ -125,6 +128,7 @@ let accommodationObjectArray = [
         type: 'hotel',
         price: 130,
         photo: './images/fairy-hotel.png',
+        altText: 'cottage style hotel',
         tags: ['playground', 'breakfast'],
         cardDetails: '2 guests, 1 bedroom, 1 bed, 1 bath',
         cardAmenities: 'Breakfast, Playground',
@@ -172,6 +176,7 @@ let accommodationObjectArray = [
         type: 'house',
         price: 240,
         photo: './images/glass-house.png',
+        altText: 'modern house with big windows and pool',
         tags: ['pool', 'parking'],
         cardDetails: '4 guests, 2 bedrooms, 3 beds, 1 bath',
         cardAmenities: 'Pool, Parking',
@@ -219,6 +224,7 @@ let accommodationObjectArray = [
         type: 'hostel',
         price: 30,
         photo: './images/marilyn-hotel.png',
+        altText: 'hostel bedroom with two single beds',
         tags: ['breakfast', 'playground'],
         cardDetails: '1 guest, 1 bed, shared bathroom',
         cardAmenities: 'Breakfast, Playground',
@@ -266,6 +272,7 @@ let accommodationObjectArray = [
         type: 'house',
         price: 140,
         photo: './images/cabin-woods.png',
+        altText: 'cabin in the woods',
         tags: ['parking', 'playground'],
         cardDetails: '2 guests, 1 bedrooms, 1 bed, 1 bathroom',
         cardAmenities: 'Parking, Playground',
@@ -313,6 +320,7 @@ let accommodationObjectArray = [
         type: 'house',
         price: 240,
         photo: './images/pool-house.png',
+        altText: 'two story house with pool',
         tags: ['pool', 'breakfast'],
         cardDetails: '4 guests, 3 bedrooms, 4 beds, 2 bathrooms',
         cardAmenities: 'Breakfast, Pool',
@@ -360,6 +368,7 @@ let accommodationObjectArray = [
         type: 'hotel',
         price: 210,
         photo: './images/wood-hotel.png',
+        altText: 'hotel bedroom, double bed, wooden feature wall',
         tags: ['pool', 'breakfast'],
         cardDetails: '2 guests, 1 bedrooms, 1 bed, 1 bathroom',
         cardAmenities: 'Breakfast, Pool',
@@ -407,6 +416,7 @@ let accommodationObjectArray = [
         type: 'hotel',
         price: 140,
         photo: './images/lake-hotel.png',
+        altText: 'hotel room, double bed',
         tags: ['breakfast', 'pool'],
         cardDetails: '2 guests, 1 bedroom, 1 bed, 1 bathroom',
         cardAmenities: 'Breakfast, Pool',
@@ -454,6 +464,7 @@ let accommodationObjectArray = [
         type: 'motel',
         price: 90,
         photo: './images/palm-hotel.png',
+        altText: '4 story motel with palm trees',
         tags: ['pool', 'breakfast'],
         cardDetails: '4 guests, 2 bedrooms, 3 beds, 1 bathroom',
         cardAmenities: 'Breakfast, Pool',
@@ -501,6 +512,7 @@ let accommodationObjectArray = [
         type: 'motel',
         price: 120,
         photo: './images/ocean-motel.png',
+        altText: '3 story motel',
         tags: ['parking', 'pool'],
         cardDetails: '2 guests, 1 bedrooms, 1 bed, 1 bathroom',
         cardAmenities: 'Parking, Pool',
@@ -548,6 +560,7 @@ let accommodationObjectArray = [
         type: 'hostel',
         price: 50,
         photo: './images/feature-hostel.png',
+        altText: 'hostel with wooden bunk beds',
         tags: ['breakfast', 'playground'],
         cardDetails: '1 guest, shared bedroom, 1 bed, shared bathroom',
         cardAmenities: '',
@@ -595,6 +608,7 @@ let accommodationObjectArray = [
         type: 'motel',
         price: 210,
         photo: './images/log-motel.png',
+        altText: 'wooden cabin, table and chairs out front',
         tags: ['parking', 'playground'],
         cardDetails: '2 guests, 1 bedroom, 2 beds, shared bathroom',
         cardAmenities: 'Parking, Playground',
@@ -642,6 +656,7 @@ let accommodationObjectArray = [
         type: 'hostel',
         price: 60,
         photo: './images/auckland-hostel.png',
+        altText: 'hostel bedroom, double bed, city view',
         tags: ['pool', 'breakfast'],
         cardDetails: '1 guest, shared bedroom, 1 bed, shared bathroom',
         cardAmenities: 'Breakfast, Pool',
@@ -689,6 +704,7 @@ let accommodationObjectArray = [
         type: 'hostel',
         price: 30,
         photo: './images/bunk-hostel.png',
+        altText: 'hostel with bunk beds',
         tags: ['breakfast', 'parking'],
         cardDetails: '2 guests, 1 bedroom, 2 beds, shared bathroom',
         cardAmenities: 'Breakfast, Parking',
@@ -736,6 +752,7 @@ let accommodationObjectArray = [
         type: 'motel',
         price: 120,
         photo: './images/sunset-motel.png',
+        altText: 'two story motel with carpark',
         tags: ['parking', 'playground'],
         cardDetails: '4 guests, 2 bedrooms, 3 beds, 1 bathroom',
         cardAmenities: 'Parking, Playground',
@@ -857,6 +874,41 @@ function initMap(){
 
     // passing map to the markers function so markers can be placed on map
     setMarkers(map);
+
+    // for(let i =0; i < filteredArrayGlobal.length; i++){
+    //     let infoWindowContent = 
+    //     `                
+    //     <div class="filtered-section__card">
+    //         <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="${filteredArrayGlobal[i].altText}">
+    //         <div class="filtered-section__info">
+    //             <div class="filtered-section__top-text">
+    //                 <div class="filtered-section__top-text-left">
+    //                     <p class="filtered-section__grey-text">${filteredArrayGlobal[i].type}</p>
+    //                     <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
+    //                 </div>
+    //                 <img class="filtered-section__bookmark" src="./images/bookmark.svg" alt="bookmark icon">
+    //             </div>
+    //             <div class="filtered-section__middle-text">
+    //                 <p class="filtered-section__grey-text">${filteredArrayGlobal[i].cardDetails}</p>
+    //                 <p class="filtered-section__grey-text">${filteredArrayGlobal[i].cardAmenities}</p>
+    //             </div>
+    //             <div class="filtered-section__bottom-text">
+    //                 <div class="filtered-section__rating-div">
+    //                     <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
+    //                     <p class="filtered-section__rating">${filteredArrayGlobal[i].rating}</p>
+    //                 </div>
+    //                 <p class="filtered-section__price"><b>$${filteredArrayGlobal[i].price}</b> / night</p>
+    //             </div>
+    //         </div>
+    //     </div>
+    //     `;
+    //     window.infoWindowContentGlobal = infoWindowContent;
+    // }
+
+    // const infoWindow = new google.maps.InfoWindow({
+    //     content: infoWindowContentGlobal,
+    // });
+
 }
 // -------------------------------------------------------------
 // Google maps initMap end
@@ -878,10 +930,60 @@ function setMarkers(map){
 
         const myLatLng = { lat: latitude, lng: longitude};
 
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
             position: myLatLng,
             map,
             title: stayName,
+        });
+
+        window.markerGlobal = marker;
+    }
+
+    for(let i =0; i < accommodationObjectArray.length; i++){
+        let infoWindowContent = 
+        `                
+        <div class="filtered-section__card">
+            <img class="filtered-section__img" id="${accommodationObjectArray[i].id}" src="${accommodationObjectArray[i].photo}" alt="${accommodationObjectArray[i].altText}">
+            <div class="filtered-section__info">
+                <div class="filtered-section__top-text">
+                    <div class="filtered-section__top-text-left">
+                        <p class="filtered-section__grey-text">${accommodationObjectArray[i].type}</p>
+                        <p class="filtered-section__stay-name">${accommodationObjectArray[i].name}, ${accommodationObjectArray[i].location}</p>
+                    </div>
+                    <img class="filtered-section__bookmark" src="./images/bookmark.svg" alt="bookmark icon">
+                </div>
+                <div class="filtered-section__middle-text">
+                    <p class="filtered-section__grey-text">${accommodationObjectArray[i].cardDetails}</p>
+                    <p class="filtered-section__grey-text">${accommodationObjectArray[i].cardAmenities}</p>
+                </div>
+                <div class="filtered-section__bottom-text">
+                    <div class="filtered-section__rating-div">
+                        <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
+                        <p class="filtered-section__rating">${accommodationObjectArray[i].rating}</p>
+                    </div>
+                    <p class="filtered-section__price"><b>$${accommodationObjectArray[i].price}</b> / night</p>
+                </div>
+            </div>
+        </div>
+        `;
+        window.infoWindowContentGlobal = infoWindowContent;
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: infoWindowContentGlobal,
+        });
+
+        console.log(markerGlobal);
+    
+        markerGlobal.addListener('mouseover', () => {
+            infoWindow.open({
+                anchor: markerGlobal,
+                map,
+                shouldFocus: false,
+            });
+        });
+
+        markerGlobal.addListener('mouseout', () => {
+            infoWindow.close();
         });
     }
 }
@@ -1292,7 +1394,7 @@ function generateAvailableCard(x){
     $('#availableCardContainer').append(
         `
             <div class="accommodation-card">
-                <img class="accommodation-card__img" id="${accommodationObjectArray[x].id}" src="${accommodationObjectArray[x].photo}" alt="">
+                <img class="accommodation-card__img" id="${accommodationObjectArray[x].id}" src="${accommodationObjectArray[x].photo}" alt="${accommodationObjectArray[x].altText}">
                 <div  class="accommodation-card__div">
                     <div class="accommodation-card__text">
                         <p class="accommodation-card__name">${accommodationObjectArray[x].name}</p>
@@ -1310,7 +1412,7 @@ function generateSearchCard(x){
     $('#filteredCardContainer').append(
         `
             <div class="filtered-section__card">
-                <img class="filtered-section__img" id="${accommodationObjectArray[x].id}" src="${accommodationObjectArray[x].photo}" alt="">
+                <img class="filtered-section__img" id="${accommodationObjectArray[x].id}" src="${accommodationObjectArray[x].photo}" alt="${accommodationObjectArray[x].altText}">
                 <div class="filtered-section__info">
                     <div class="filtered-section__top-text">
                         <div class="filtered-section__top-text-left">
@@ -1344,14 +1446,14 @@ function allFilteredArraySearchCards(){
         $('#filteredCardContainer').append(
             `
                 <div class="filtered-section__card">
-                    <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="">
+                    <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="${filteredArrayGlobal[i].altText}">
                     <div class="filtered-section__info">
                         <div class="filtered-section__top-text">
                             <div class="filtered-section__top-text-left">
                                 <p class="filtered-section__grey-text">${filteredArrayGlobal[i].type}</p>
                                 <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
                             </div>
-                            <img class="filtered-section__bookmark" src="" alt="">
+                            <img class="filtered-section__bookmark" src="./images/bookmark.svg" alt="bookmark icon">
                         </div>
                         <div class="filtered-section__middle-text">
                             <p class="filtered-section__grey-text">${filteredArrayGlobal[i].cardDetails}</p>
@@ -1392,14 +1494,14 @@ function searchFilteredArrayCards(i){
     $('#filteredCardContainer').append(
         `
             <div class="filtered-section__card">
-                <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="">
+                <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="${filteredArrayGlobal[i].altText}">
                 <div class="filtered-section__info">
                     <div class="filtered-section__top-text">
                         <div class="filtered-section__top-text-left">
                             <p class="filtered-section__grey-text">${filteredArrayGlobal[i].type}</p>
                             <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
                         </div>
-                        <img class="filtered-section__bookmark" src="" alt="">
+                        <img class="filtered-section__bookmark" src="./images/bookmark.svg" alt="bookmark icon">
                     </div>
                     <div class="filtered-section__middle-text">
                         <p class="filtered-section__grey-text">${filteredArrayGlobal[i].cardDetails}</p>
@@ -1480,7 +1582,7 @@ function accommodationPageGenerator(x){
                 <img class="accommodation-page__bookmark-icon" src="./images/bookmark.svg" alt="bookmark icon">
             </div>
             
-            <img class="accommodation-page__stay-img" src="${accommodationObjectArray[x].photo}" alt="${accommodationObjectArray[x].name}">
+            <img class="accommodation-page__stay-img" src="${accommodationObjectArray[x].photo}" alt="${accommodationObjectArray[x].altText}">
             
             <div class="accommodation-page__stay-info">
                 <div class="accommodation-page__stay-info-left">
@@ -1513,8 +1615,9 @@ function accommodationPageGenerator(x){
                                 <option value="4">4</option>
                         </select>
                         <select class="accommodation-page__breakfast" name="breakfast" id="breakfast">
-                            <option value="breakfast">Breakfast</option>
-                            <option value="">${accommodationObjectArray[x].mealOption}</option>
+                            <option value="breakfast">Breakfast options</option>
+                            <option value="yes">${accommodationObjectArray[x].mealOption}</option>
+                            <option value="no">No</option>
                         </select>
                         <button class="accommodation-page__make-booking" id="makeBooking">Make Booking</button>
                     </div>
@@ -1542,7 +1645,7 @@ function accommodationPageGenerator(x){
             
             <div class="accommodation-page__contact-div">
                 <div class="accommodation-page__contact-div-top">
-                    <img class="accommodation-page__host-img" src="${accommodationObjectArray[x].hostImg}" alt="">
+                    <img class="accommodation-page__host-img" src="${accommodationObjectArray[x].hostImg}" alt="${accommodationObjectArray[x].altText}">
                     <div class="accommodation-page__contact-div-info">
                         <p class="accommodation-page__heading-2">Meet your host</p>
                         <button class="accommodation-page__contact-btn">Contact</button>
@@ -1573,7 +1676,7 @@ function filteredPageGenerator(x){
                 <img class="accommodation-page__bookmark-icon" src="./images/bookmark.svg" alt="bookmark icon">
             </div>
             
-            <img class="accommodation-page__stay-img" src="${filteredArrayGlobal[x].photo}" alt="${filteredArrayGlobal[x].name}">
+            <img class="accommodation-page__stay-img" src="${filteredArrayGlobal[x].photo}" alt="${filteredArrayGlobal[x].altText}">
             
             <div class="accommodation-page__stay-info">
                 <div class="accommodation-page__stay-info-left">
@@ -1606,8 +1709,9 @@ function filteredPageGenerator(x){
                                 <option value="4">4</option>
                         </select>
                         <select class="accommodation-page__breakfast" name="breakfast" id="breakfast">
-                            <option value="breakfast">Breakfast</option>
-                            <option value="">${filteredArrayGlobal[x].mealOption}</option>
+                            <option value="breakfast">Breakfast options</option>
+                            <option value="yes">${accommodationObjectArray[x].mealOption}</option>
+                            <option value="no">No</option>
                         </select>
                         <button class="accommodation-page__make-booking" id="${filteredArrayGlobal[x].id2}" data-toggle="modal" data-target="#exampleModalCenter">Make Booking</button>
                     </div>
@@ -1635,7 +1739,7 @@ function filteredPageGenerator(x){
             
             <div class="accommodation-page__contact-div">
                 <div class="accommodation-page__contact-div-top">
-                    <img class="accommodation-page__host-img" src="${filteredArrayGlobal[x].hostImg}" alt="">
+                    <img class="accommodation-page__host-img" src="${filteredArrayGlobal[x].hostImg}" alt="${filteredArrayGlobal[x].altText}">
                     <div class="accommodation-page__contact-div-info">
                         <p class="accommodation-page__heading-2">Meet your host</p>
                         <button class="accommodation-page__contact-btn">Contact</button>
@@ -1647,28 +1751,37 @@ function filteredPageGenerator(x){
     );
 
     
-    $('#accommCheckIn').datepicker({
-        dateFormat:'yy-mm-dd',
-        changeMonth: true,
-        minDate: new Date(),
-        // defaultDate: transferCheckInDetailsGlobal,
+    // $('#accommCheckIn').datepicker({
+    //     dateFormat:'yy-mm-dd',
+    //     changeMonth: true,
+    //     minDate: new Date(),
+    //     // defaultDate: transferCheckInDetailsGlobal,
 
-        onSelect: function(date){
-            let selectDate = new Date(date);
-            let msInADay = 86400000;
-            let stDate = new Date(selectDate.getTime() + msInADay);
+    //     onSelect: function(date){
+    //         let selectDate = new Date(date);
+    //         let msInADay = 86400000;
+    //         let stDate = new Date(selectDate.getTime() + msInADay);
 
-            $('#accommCheckOut').datepicker('option', 'minDate', stDate);
-            let enDate = new Date(selectDate.getTime() + 15 * msInADay);
-        }
-    });
+    //         $('#accommCheckOut').datepicker('option', 'minDate', stDate);
+    //         let enDate = new Date(selectDate.getTime() + 15 * msInADay);
+    //     }
+    // });
 
+    // sets the dates/guests to the values user input in the search bar
     document.getElementById('accommCheckIn').value=transferCheckInDetailsGlobal;
 
     document.getElementById('accommCheckOut').value=transferCheckOutDetailsGlobal;
     
     document.getElementById('accommGuests').value=guestsGlobal;
     console.log(guestsGlobal);
+
+    // $('#accommCheckIn').change(function(){
+    //     document.getElementById('accommCheckOut').value = 'Add dates';
+    // })
+
+    // $('#accommCheckOut').change(function(){
+    //     document.getElementById('accommCheckIn').value = 'Add dates';
+    // })
 
 
 
@@ -1684,19 +1797,31 @@ function filteredPageGenerator(x){
     $('.accommodation-page__make-booking').click(function(){
         console.log('modal clicked');
 
-        
-        // // array of months so the date can have a written month instead of a number in checkInDetails & checkOutDetails 
-        // let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        // let msDay = 1000 * 3600 * 24;
-
         // getting the values for the booking
         let checkInDate = new Date ($('#accommCheckIn').val());
 
         let checkOutDate = new Date ($('#accommCheckOut').val());
 
-        let guests = $('#accomGuests').val();
+        let guests = $('#accommGuests').val();
         console.log(guests);
+
+        let breakfast = $('#breakfast').val();
+
+        if(breakfast === 'breakfast'){
+            // if no default breakfast option is selected, remove the data-toggle modal attribute to stop the booking modal popping up, and alert the user to select breakfast option
+            $('.accommodation-page__make-booking').removeAttr('data-toggle', 'modal');
+            alert('Please select an option for breakfast before continuing');
+        } else if(breakfast === 'yes'){
+            // adds data-togle back in so modal pops up
+            $('.accommodation-page__make-booking').attr('data-toggle', 'modal');
+            let breakfastGuests = 'Yes';
+            window.breakfastGuestsGlobal = breakfastGuests;
+        } else if (breakfast === 'no'){
+            // adds data-togle back in so modal pops up
+            $('.accommodation-page__make-booking').attr('data-toggle', 'modal');
+            let breakfastGuests = 'No';
+            window.breakfastGuestsGlobal = breakfastGuests;
+        }
 
         // getting individual data of day, month, year
         let checkInDay = checkInDate.getDate(),
@@ -1710,6 +1835,22 @@ function filteredPageGenerator(x){
 
         const checkOutDetails = [checkOutYear, checkOutMonth, checkOutDay].join('/');
 
+        let msDay = 1000 * 3600 * 24;
+
+        // calculate the difference between check-in and check-out days
+        let difference = checkOutDate.getTime() - checkInDate.getTime();
+    
+        let dayDifference = difference/msDay;
+
+        console.log(dayDifference);
+
+        const nightPrice = accommodationObjectArray[x].price * dayDifference;
+        console.log(nightPrice);
+
+        const mealPrice = accommodationObjectArray[x].mealPrice * guests * dayDifference;
+
+        priceTotal = nightPrice + mealPrice;
+
         $('#modalContent').empty();
         $('#modalContent').append(
             `
@@ -1719,14 +1860,14 @@ function filteredPageGenerator(x){
                 </div>
                 <!-- filtered card start -->
                 <div class="filtered-section__card">
-                    <img class="filtered-section__img" id="${filteredArrayGlobal[x].id}" src="${filteredArrayGlobal[x].photo}" alt="">
+                    <img class="filtered-section__img" id="${filteredArrayGlobal[x].id}" src="${filteredArrayGlobal[x].photo}" alt="${filteredArrayGlobal[x].altText}">
                     <div class="filtered-section__info">
                         <div class="filtered-section__top-text">
                             <div class="filtered-section__top-text-left">
                                 <p class="filtered-section__grey-text">${filteredArrayGlobal[x].type}</p>
                                 <p class="filtered-section__stay-name">${filteredArrayGlobal[x].name}, ${filteredArrayGlobal[x].location}</p>
                             </div>
-                            <img class="filtered-section__bookmark" src="" alt="">
+                            <img class="filtered-section__bookmark" src="./images/bookmark.svg" alt="bookmark icon">
                         </div>
                         <div class="filtered-section__middle-text">
                             <p class="filtered-section__grey-text">${filteredArrayGlobal[x].cardDetails}</p>
@@ -1757,29 +1898,30 @@ function filteredPageGenerator(x){
                     </div>
                     <div class="modal__info-div">
                         <p class="modal__p-grey">Breakfast</p>
-                        <p class="modal__p">Breakfast x</p>
+                        <p class="modal__p">${breakfastGuestsGlobal}</p>
                     </div>
                 </div>
                 <div class="modal__price-breakdown-div">
-                    <p class="modal__price-breakdown-p">Price breakdown:</p>
+                    <p class="modal__heading-2">Price breakdown:</p>
                     <div class="modal__price-div">
-                        <p class="modal__p"></p>
-                        <p class="modal__p"></p>
+                        <p class="modal__p">$${accommodationObjectArray[x].price} x ${dayDifference} night</p>
+                        <p class="modal__p">${nightPrice}</p>
+                    </div>
+                    <div class="modal__breakfast-price-div">
+                        <div class="modal__breakfast-prices">
+                            <p class="modal__p">${accommodationObjectArray[x].mealOption}</p>
+                            <p class="modal__p-grey">x ${guests} guests</p>
+                            <p class="modal__p-grey">x ${dayDifference} days</p>
+                        </div>
+                        <p class="modal__p">$${mealPrice}</p>
                     </div>
                     <div class="modal__price-total-div">
-                        <p class="modal__price-breakdown-p">Total</p>
-                        <p class="modal__price-breakdown-p"></p>
+                        <p class="modal__heading-2">Total</p>
+                        <p class="modal__heading-2">$${priceTotal}</p>
                     </div>
                 </div>
             `
         );
-
-
-        // for(let i = 0; i < filteredArrayGlobal.length; i++){
-        //     if(parseInt(this.id2) === filteredArrayGlobal[i].id2){
-        //         console.log('modal functioning');
-        //     }
-        // }
     });
 }
 

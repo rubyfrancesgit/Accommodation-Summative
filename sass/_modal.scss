@@ -1,34 +1,62 @@
 .modal-content {
-    padding: 3rem;
+    padding: 5rem;
+    width: 50vw;
     @include center;
 }
 
 .modal {
-    &__text-div {
-        @include center;
+    &__heading-2 {
+        @include heading;
+        font-size: 1.5rem;
     }
 
     &__p-grey {
         @include text;
         color: $grey;
+        margin: 0px;
     }
 
     &__p {
         @include text;
     }
 
+    &__text-div {
+        @include flex-column;
+        margin-bottom: 2rem;
+    }
+
     &__confirmation-heading {
         @include heading;
+        margin: 0px;
     }
 
     &__booking-info {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 2rem;
     }
 
     &__price-breakdown-div {
         @include white-filter-select;
         @include flex-column;
+        align-items: flex-start;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    &__breakfast-price-div {
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 1px solid $light-grey;
+        margin-bottom: 1rem;
+    }
+
+    &__price-total-div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
     }
 }

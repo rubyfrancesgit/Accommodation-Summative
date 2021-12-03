@@ -25,12 +25,14 @@
 
     &__location-select{
         @include text;
+        color: $grey;
         background: none;
         border: none;
     }
 
     &__guest-select{
         @include text;
+        color: $grey;
         background: none;
         border: none;
     }

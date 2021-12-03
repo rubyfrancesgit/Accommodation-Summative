@@ -97,16 +97,17 @@
     &__sleeping-container {
         width: 60%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding-top: 1rem;
     }
 
     &__sleeping-arrangement-div {
-        width: 10rem;
+        width: 11rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 2rem;
+        margin-right: 2rem;
         border: 1px solid $light-grey;
         border-radius: $curved-border;
     }
@@ -127,6 +128,7 @@
 
     &__booking-div {
         width: 60%;
+        max-width: 20rem;
         @include flex-column;
         align-items: flex-start;
         padding: 2rem;
@@ -195,13 +197,14 @@
     &__amenities-div {
         width: 50%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     &__amenities {
         width: 6rem;
         @include center;
         justify-content: space-between;
+        margin-right: 3rem;
     }
 
     &__amenities-icon {
@@ -241,14 +244,15 @@
     }
 
     &__contact-div {
+        width: 100%;
         @include flex-column;
-        justify-content: flex-start;
+        align-items: flex-start;
     }
 
     &__host-img {
         height: 7rem;
         width: 7rem;
-        padding-right: 1rem;
+        margin-right: 1rem;
     }
 
     &__contact-btn {
