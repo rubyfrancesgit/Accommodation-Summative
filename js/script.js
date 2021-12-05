@@ -3,17 +3,19 @@ console.log('linked :)');
 // -------------------------------------------------------------
 // Global variables start
 // -------------------------------------------------------------
+
 const landingSection = document.querySelector('#landingSection');
 const availableStays = document.querySelector('#availableStays');
 const availableCardContainer = document.querySelector('#availableCardContainer');
-const topNav = document.querySelector('#topNav');
-const searchNav = document.querySelector('#searchNav');
+// const topNav = document.querySelector('#topNav');
+// const searchNav = document.querySelector('#searchNav');
 const filteredStays = document.querySelector('#filteredStays');
 const filteredSection = document.querySelector('#filteredSection');
 const stayNZLogo = document.querySelector('#stayNZLogo');
 const searchIcon = document.querySelector('#searchIcon');
-const availableArrowIcon = document.querySelector('#availableArrowIcon');
-const accommodationPage = document.querySelector('#accommodationPage');
+// const availableArrowIcon = document.querySelector('#availableArrowIcon');
+// const accommodationPage = document.querySelector('#accommodationPage');
+
 // -------------------------------------------------------------
 // Global variables start
 // -------------------------------------------------------------
@@ -23,6 +25,7 @@ const accommodationPage = document.querySelector('#accommodationPage');
 // -------------------------------------------------------------
 // Accommodation object array start
 // -------------------------------------------------------------
+
 let accommodationObjectArray = [
     {
         id: 0,
@@ -43,7 +46,7 @@ let accommodationObjectArray = [
         maxNights: 7,
         minGuest: 1,
         maxGuest: 4,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely accommodation option situated on the beach in Wellington. Fully equiped with all the delights of home to make your stay as comfortable as possible. Beach front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -70,7 +73,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Hey! I'm your host Abby. I live locally so happy to recommend places to eat. Get in contact should you need anything`,
     },
     {
         id: 1,
@@ -117,8 +120,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Jack is the hotel manager - the service desk hosts will vary each day. Please don't hesitate to ask if you need anything - we have local guides and recommendations available.`,
     },
     {
         id: 2,
@@ -139,7 +142,7 @@ let accommodationObjectArray = [
         maxNights: 5,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A cosy hotel situated in Wellington Central. Ensuit for each bathroom. A shared longue area and bar. Laundry service available. Check at front desk for local reccommendations. City center property, and only a five minute walk to the shops.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -166,7 +169,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Michelle is the hotel manager - the service desk hosts will vary each day. Please don't hesitate to ask if you need anything - we have local guides and recommendations available.`,
     },
     {
         id: 3,
@@ -187,7 +190,7 @@ let accommodationObjectArray = [
         maxNights: 15,
         minGuest: 1,
         maxGuest: 4,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A modern accommodation option situated on the Hills in Auckland. Fully equiped with all the delights of home to make your stay as comfortable as possible. Beach front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -214,7 +217,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Hey! I'm your host Abby. I live locally so happy to recommend places to eat. Get in contact should you need anything.`,
     },
     {
         id: 4,
@@ -235,7 +238,7 @@ let accommodationObjectArray = [
         maxNights: 10,
         minGuest: 1,
         maxGuest: 1,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A vibrant accommodation option situated in Wellington Central. Shared kitchen, entertainment room and lounge available - please keep common areas tidy. City center property, and only a five minute walk to the shops! Social events each night.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -262,7 +265,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `The service desk is open from 6am - 5pm. There's a contact number should you need help after 5pm. The hostel manager is Grace - the service desk hosts vary.`,
     },
     {
         id: 5,
@@ -283,7 +286,7 @@ let accommodationObjectArray = [
         maxNights: 15,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'An adventurous accommodation option situated in the forest in Napier. Fully equiped with all the delights of home to make your stay as comfortable as possible. Property surrounded by trees, and only a five minute drive to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -310,7 +313,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Hey! I'm your host Abby. I live locally so happy to recommend places to eat. Get in contact should you need anything.`,
     },
     {
         id: 6,
@@ -331,7 +334,7 @@ let accommodationObjectArray = [
         maxNights: 7,
         minGuest: 1,
         maxGuest: 4,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely accommodation option situated near the lake in Taupo. Fully equiped with all the delights of home to make your stay as comfortable as possible. Lake front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -357,8 +360,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Hey! I'm your host Jack. I'm on call should you need any help during your stay. Please let me know in advance if you need a late check-in.`,
     },
     {
         id: 7,
@@ -379,7 +382,7 @@ let accommodationObjectArray = [
         maxNights: 14,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely hotel situated in Napier Central. Ensuit for each bathroom. A shared longue area and bar. Laundry service available. Check at front desk for local reccommendations. City center property, and only a five minute walk to the shops.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -405,8 +408,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Hey! I'm your host Jack. The service desk is open 8am - 6pm. Please get in touch if you need a late check-in.`,
     },
     {
         id: 8,
@@ -427,7 +430,7 @@ let accommodationObjectArray = [
         maxNights: 10,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely hotel situated in Wellington Central. Ensuit for each bathroom. A shared longue area and bar. Laundry service available. Check at front desk for local reccommendations. City center property, and only a five minute walk to the shops.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -453,8 +456,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Ocean Hotel has a service desk running 24/7 - please check in with the service desk who is hosting for the evening. Lane is the hotel manager.`,
     },
     {
         id: 9,
@@ -475,7 +478,7 @@ let accommodationObjectArray = [
         maxNights: 5,
         minGuest: 1,
         maxGuest: 4,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely accommodation option situated on the beach in Napier. Equiped with kitchenette and en-suite. Share entertainment room and lounge available - please keep common areas tidy. Beach front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -502,7 +505,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Palm Motel has a service desk running 24/7 - please check in with the service desk who is hosting for the evening. Jane is the motel manager.`,
     },
     {
         id: 10,
@@ -523,7 +526,7 @@ let accommodationObjectArray = [
         maxNights: 15,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely accommodation option situated by the lake in AucTaupokalnd. Equiped with kitchenette and en-suite. Share entertainment room and lounge available - please keep common areas tidy. Beach front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -549,8 +552,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Hey! I'm your host Jack. The service desk is running 24/7 - please check in with the service desk who is hosting for the evening.`,
     },
     {
         id: 11,
@@ -571,7 +574,7 @@ let accommodationObjectArray = [
         maxNights: 10,
         minGuest: 1,
         maxGuest: 1,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A vibrant accommodation option situated by the beach in Napier. Shared kitchen, entertainment room and lounge available - please keep common areas tidy. beach front property, and only a five minute walk to the shops! Social events each night.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -597,8 +600,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Craft Hostel has a service desk running 24/7 - please check in with the service desk who is hosting for the evening. Mitch is the hostel manager.`,
     },
     {
         id: 12,
@@ -619,7 +622,7 @@ let accommodationObjectArray = [
         maxNights: 15,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely accommodation option situated in Wellington CBD. Equiped with kitchenette and en-suite. Share entertainment room and lounge available - please keep common areas tidy. Beach front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -645,8 +648,8 @@ let accommodationObjectArray = [
         `,
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
-        hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostImg: './images/portraitguy1.jpg',
+        hostInfo: `Hey! I'm your host Jack. The service desk is open from 8am - 5pm. Please get in touch if you need a late check-in.`,
     },
     {
         id: 13,
@@ -667,7 +670,7 @@ let accommodationObjectArray = [
         maxNights: 7,
         minGuest: 1,
         maxGuest: 1,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A vibrant accommodation option situated in Auckalnd Central. Shared kitchen, entertainment room and lounge available - please keep common areas tidy. City center property, and only a five minute walk to the shops! Social events each night.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -694,7 +697,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Stay Hostel has a service desk running 24/7 - please check in with the service desk who is hosting for the evening. Jane is the hostel manager.`,
     },
     {
         id: 14,
@@ -715,7 +718,7 @@ let accommodationObjectArray = [
         maxNights: 15,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A vibrant accommodation option situated in Taupo Central. Shared kitchen, entertainment room and lounge available - please keep common areas tidy. Property near the lake, and only a five minute walk to the shops! Social events each night.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -742,7 +745,7 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Bunk Hostel has a service desk running 24/7 - please check in with the service desk who is hosting for the evening. Sarah is the hostel manager.`,
     },
     {
         id: 15,
@@ -763,7 +766,7 @@ let accommodationObjectArray = [
         maxNights: 5,
         minGuest: 1,
         maxGuest: 4,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A lovely accommodation option situated on the beach in Auckalnd. Equiped with kitchenette and en-suite. Share entertainment room and lounge available - please keep common areas tidy. Beach front property, and only a five minute walk to the shops! Linen provided.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -790,9 +793,10 @@ let accommodationObjectArray = [
         mealOption: '<b>$15 Continental breakfast</b> - per person, per day',
         mealPrice: 15,
         hostImg: './images/portraitgirl2.jpg',
-        hostInfo: `Hey! I'm your host Jack. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, perferendis accusantium laboriosam voluptatum optio non.`,
+        hostInfo: `Sunset Motel has a service desk running 24/7 - please check in with the service desk who is hosting for the evening. Maddie is the motel manager.`,
     },
 ];
+
 // -------------------------------------------------------------
 // Accommodation object array end
 // -------------------------------------------------------------
@@ -802,6 +806,7 @@ let accommodationObjectArray = [
 // -------------------------------------------------------------
 // Displays all accommodation cards on the landing page & searched page start
 // -------------------------------------------------------------
+
 function availableCardLoop(){
     for(let i = 0; i < accommodationObjectArray.length; i++){
         generateAvailableCard(i);
@@ -815,6 +820,7 @@ function filteredCardLoop(){
     };
 }
 filteredCardLoop();
+
 // -------------------------------------------------------------
 // Displays all accommodation cards on the landing page & searched page end
 // -------------------------------------------------------------
@@ -824,11 +830,13 @@ filteredCardLoop();
 // -------------------------------------------------------------
 // Google maps API key append start
 // -------------------------------------------------------------
+
 const script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer></script>';
 
 $(document).ready(function(){
     $('body').append(script);
 });
+
 // -------------------------------------------------------------
 // Google maps API append end
 // -------------------------------------------------------------
@@ -838,6 +846,7 @@ $(document).ready(function(){
 // -------------------------------------------------------------
 // Google maps initMap start
 // -------------------------------------------------------------
+
 function initMap(){
 
     // search bar check-in and check-out dates start
@@ -874,42 +883,8 @@ function initMap(){
 
     // passing map to the markers function so markers can be placed on map
     setMarkers(map);
-
-    // for(let i =0; i < filteredArrayGlobal.length; i++){
-    //     let infoWindowContent = 
-    //     `                
-    //     <div class="filtered-section__card">
-    //         <img class="filtered-section__img" id="${filteredArrayGlobal[i].id}" src="${filteredArrayGlobal[i].photo}" alt="${filteredArrayGlobal[i].altText}">
-    //         <div class="filtered-section__info">
-    //             <div class="filtered-section__top-text">
-    //                 <div class="filtered-section__top-text-left">
-    //                     <p class="filtered-section__grey-text">${filteredArrayGlobal[i].type}</p>
-    //                     <p class="filtered-section__stay-name">${filteredArrayGlobal[i].name}, ${filteredArrayGlobal[i].location}</p>
-    //                 </div>
-    //                 <img class="filtered-section__bookmark" src="./images/bookmark.svg" alt="bookmark icon">
-    //             </div>
-    //             <div class="filtered-section__middle-text">
-    //                 <p class="filtered-section__grey-text">${filteredArrayGlobal[i].cardDetails}</p>
-    //                 <p class="filtered-section__grey-text">${filteredArrayGlobal[i].cardAmenities}</p>
-    //             </div>
-    //             <div class="filtered-section__bottom-text">
-    //                 <div class="filtered-section__rating-div">
-    //                     <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
-    //                     <p class="filtered-section__rating">${filteredArrayGlobal[i].rating}</p>
-    //                 </div>
-    //                 <p class="filtered-section__price"><b>$${filteredArrayGlobal[i].price}</b> / night</p>
-    //             </div>
-    //         </div>
-    //     </div>
-    //     `;
-    //     window.infoWindowContentGlobal = infoWindowContent;
-    // }
-
-    // const infoWindow = new google.maps.InfoWindow({
-    //     content: infoWindowContentGlobal,
-    // });
-
 }
+
 // -------------------------------------------------------------
 // Google maps initMap end
 // -------------------------------------------------------------
@@ -919,28 +894,11 @@ function initMap(){
 // -------------------------------------------------------------
 // Map markers start
 // -------------------------------------------------------------
+
 function setMarkers(map){
-    // running a for loop to filter through the object array getting the lat & lng of all the accommodation options to place markers for them
-    for(let i = 0; i < accommodationObjectArray.length; i++){
-        const location = accommodationObjectArray[i].latLng;
-        const stayName = accommodationObjectArray[i].name;
-
-        const latitude = accommodationObjectArray[i].latitude;
-        const longitude = accommodationObjectArray[i].longitude;
-
-        const myLatLng = { lat: latitude, lng: longitude};
-
-        const marker = new google.maps.Marker({
-            position: myLatLng,
-            map,
-            title: stayName,
-        });
-
-        window.markerGlobal = marker;
-    }
 
     for(let i =0; i < accommodationObjectArray.length; i++){
-        let infoWindowContent = 
+        const infoWindowContent = 
         `                
         <div class="filtered-section__card">
             <img class="filtered-section__img" id="${accommodationObjectArray[i].id}" src="${accommodationObjectArray[i].photo}" alt="${accommodationObjectArray[i].altText}">
@@ -966,23 +924,36 @@ function setMarkers(map){
             </div>
         </div>
         `;
-        window.infoWindowContentGlobal = infoWindowContent;
 
         const infoWindow = new google.maps.InfoWindow({
-            content: infoWindowContentGlobal,
+            content: infoWindowContent,
         });
 
-        console.log(markerGlobal);
+        let accommName = accommodationObjectArray[i].name;
+        let accommLat = accommodationObjectArray[i].latitude;
+        let accommLng = accommodationObjectArray[i].longitude;
+        let accommCoordinates = { lat: accommLat, lng: accommLng};
+        let marker = new google.maps.Marker({
+            position: accommCoordinates,
+            map,
+            title: accommName,
+        });
     
-        markerGlobal.addListener('mouseover', () => {
+        marker.addListener('mouseover', () => {
+            infoWindow.setOptions({
+                disableAutoPan: true,
+            });
+        });
+
+        marker.addListener('mouseover', () => {
             infoWindow.open({
-                anchor: markerGlobal,
+                anchor: marker,
                 map,
                 shouldFocus: false,
             });
         });
 
-        markerGlobal.addListener('mouseout', () => {
+        marker.addListener('mouseout', () => {
             infoWindow.close();
         });
     }
@@ -996,6 +967,7 @@ function setMarkers(map){
 // -------------------------------------------------------------
 // sort by price start
 // -------------------------------------------------------------
+
 $("#sortPriceAvailable").change(function(){
     // getting the selected value from the sort price input and arranging the object array depending on which value was selected
     let sortValue = ($("#sortPriceAvailable").val());
@@ -1059,6 +1031,7 @@ $('#sortPriceFiltered').change(function(){
         allFilteredArraySearchCards();
     }
 });
+
 // -------------------------------------------------------------
 // sort by price end
 // -------------------------------------------------------------
@@ -1068,7 +1041,8 @@ $('#sortPriceFiltered').change(function(){
 // -------------------------------------------------------------
 // sort by stay type start
 // -------------------------------------------------------------
-// landing page filters start
+
+// landing page filters start - these searches fun for loops in order to run through both the accommodationObjectArray and the tags within that object array, checking for specified values 
 $('#accommodationTypeAvaiable').change(function(a, b){
 
     let sortValueAvailable = ($("#accommodationTypeAvaiable").val());
@@ -1159,6 +1133,7 @@ $('#accommodationTypeFiltered').change(function(a,b){
     }
 });
 //search page filters end
+
 // -------------------------------------------------------------
 // sort by stay type end
 // -------------------------------------------------------------
@@ -1168,6 +1143,7 @@ $('#accommodationTypeFiltered').change(function(a,b){
 // -------------------------------------------------------------
 // filter buttons start
 // -------------------------------------------------------------
+
 // landing page buttons start
 $('#breakfastAvailable').click(function(){
 
@@ -1275,18 +1251,38 @@ $('#resetFiltered').click(function(){
     allFilteredArraySearchCards(); 
 });
 // search page buttons end
+
 // -------------------------------------------------------------
 // filter buttons end
 // -------------------------------------------------------------
 
 
+function searchCheck(event){
+    event.preventDefault();
+
+    let location = $('#searchLocation').val();
+
+    let guests = $('#guestSelect').val();
+
+    let checkInDate = new Date ($('#searchCheckIn').val());
+
+    let checkOutDate = new Date ($('#searchCheckOut').val());
+
+    if((checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date') || (guests === 'Add guests') || (location === 'Where are you going?')){
+        alert('Please fill in all feilds to search');
+    } else {
+        filterFunction();
+    }
+}
+
 
 // -------------------------------------------------------------
 // search filtering start
 // -------------------------------------------------------------
-function filterFunction(event){
+
+function filterFunction(){
     $('#filteredCardContainer').empty();
-    event.preventDefault();
+    // event.preventDefault();
 
     // array of months so the date can have a written month instead of a number in checkInDetails & checkOutDetails 
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -1342,26 +1338,25 @@ function filterFunction(event){
 
     // calling this function creates the search cards with information from the new filtered array
     allFilteredArraySearchCards();
+
+    // hiding and showing the relevant sections so the website 'changes pages' from the landing page to the searched page
+    $('#searchIcon').click(function(){
+
+        // adding the search bar to the nav bar
+        $('#searchBar').append( $('#navSearchBar') );
+
+        // elements with the class 'hide' aren't visible as 'hide' has a display of none
+        landingSection.classList.add('top-position');
+        landingSection.classList.remove('landing-section');
+        availableStays.classList.add('hide');
+        availableCardContainer.classList.add('hide');
+
+        filteredStays.classList.remove('hide');
+        filteredSection.classList.remove('hide');
+        
+    });
     
 }
-
-
-// hiding and showing the relevant sections so the website 'changes pages' from the landing page to the searched page
-$('#searchIcon').click(function(){
-
-    // adding the search bar to the nav bar
-    $('#searchBar').append( $('#navSearchBar') );
-
-    // elements with the class 'hide' aren't visible as 'hide' has a display of none
-    landingSection.classList.add('top-position');
-    landingSection.classList.remove('landing-section');
-    availableStays.classList.add('hide');
-    availableCardContainer.classList.add('hide');
-
-    filteredStays.classList.remove('hide');
-    filteredSection.classList.remove('hide');
-    
-});
 
 // -------------------------------------------------------------
 // search filtering end
@@ -1489,6 +1484,7 @@ function allFilteredArraySearchCards(){
 // -------------------------------------------------------------
 // when filters are applied to the searched cards, this function is alled to filter through the new object array and append relevant info - start
 // -------------------------------------------------------------
+
 function searchFilteredArrayCards(i){
     $('#filteredCardContainer').empty();
     $('#filteredCardContainer').append(
@@ -1519,14 +1515,11 @@ function searchFilteredArrayCards(i){
         `
     );
 }
+
 // -------------------------------------------------------------
 // when filters are applied to the searched cards, this function is alled to filter through the new object array and append relevant info - end
 // -------------------------------------------------------------
 
-
-// -------------------------------------------------------------
-// creates accommodation cards on landing page - end
-// -------------------------------------------------------------
 
 
 // -------------------------------------------------------------
@@ -1564,9 +1557,7 @@ $('.accommodation-card__img').click(function(){
 
 });
 
-
-
-// generates the accommodation stay page, appends all relevent information
+// generates the accommodation stay page for the cards on the landing page, appends all relevent information
 function accommodationPageGenerator(x){
     $('#accommodationPage').empty();
     $('#accommodationPage').append(
@@ -1605,21 +1596,8 @@ function accommodationPageGenerator(x){
                 </div>
                 <div class="accommodation-page__stay-info-right">
                     <div class="accommodation-page__booking-div">
-                        <input class="accommodation-page__check-in" type="text" name="accommCheckIn">
-                        <input class="accommodation-page__check-out" type="text" name="accommCheckOut">
-                        <select class="accommodation-page__guests" name="guestsaccommGuests">
-                            <option value="Add guests">Add guests</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                        </select>
-                        <select class="accommodation-page__breakfast" name="breakfast" id="breakfast">
-                            <option value="breakfast">Breakfast options</option>
-                            <option value="yes">${accommodationObjectArray[x].mealOption}</option>
-                            <option value="no">No</option>
-                        </select>
-                        <button class="accommodation-page__make-booking" id="makeBooking">Make Booking</button>
+                        <br />
+                        <p class="accommodation-page__p">Please use search bar to find available stays the suit your needs.</p>
                     </div>
                 </div>
             </div>
@@ -1638,11 +1616,6 @@ function accommodationPageGenerator(x){
                 </div>
             </div>
             
-            <div class="accommodation-page__map-div">
-                <p class="accommodation-page__heading-2">${accommodationObjectArray[x].location}</p>
-                <div class="accommodation-page__map" id="accommodationMap"></div>
-            </div>
-            
             <div class="accommodation-page__contact-div">
                 <div class="accommodation-page__contact-div-top">
                     <img class="accommodation-page__host-img" src="${accommodationObjectArray[x].hostImg}" alt="${accommodationObjectArray[x].altText}">
@@ -1657,11 +1630,8 @@ function accommodationPageGenerator(x){
     );
 }
 
-
-
-
+// generates the accommodation stay page for the cards on the searched page, appends all relevent information
 function filteredPageGenerator(x){
-
     $('#accommodationPage').empty();
     $('#accommodationPage').append(
         `
@@ -1750,23 +1720,6 @@ function filteredPageGenerator(x){
         `
     );
 
-    
-    // $('#accommCheckIn').datepicker({
-    //     dateFormat:'yy-mm-dd',
-    //     changeMonth: true,
-    //     minDate: new Date(),
-    //     // defaultDate: transferCheckInDetailsGlobal,
-
-    //     onSelect: function(date){
-    //         let selectDate = new Date(date);
-    //         let msInADay = 86400000;
-    //         let stDate = new Date(selectDate.getTime() + msInADay);
-
-    //         $('#accommCheckOut').datepicker('option', 'minDate', stDate);
-    //         let enDate = new Date(selectDate.getTime() + 15 * msInADay);
-    //     }
-    // });
-
     // sets the dates/guests to the values user input in the search bar
     document.getElementById('accommCheckIn').value=transferCheckInDetailsGlobal;
 
@@ -1774,16 +1727,6 @@ function filteredPageGenerator(x){
     
     document.getElementById('accommGuests').value=guestsGlobal;
     console.log(guestsGlobal);
-
-    // $('#accommCheckIn').change(function(){
-    //     document.getElementById('accommCheckOut').value = 'Add dates';
-    // })
-
-    // $('#accommCheckOut').change(function(){
-    //     document.getElementById('accommCheckIn').value = 'Add dates';
-    // })
-
-
 
     // reverts the steps taken to create the 'accommodation page' so that it goes back to the 'searched page'
     $('#filteredArrowIcon').click(function(){
@@ -1794,6 +1737,7 @@ function filteredPageGenerator(x){
         $('#accommodationPage').empty();
     });
 
+    // when 'make-booking' button is clicked, gathers values from inputs to prepare for the booking confirmation modal
     $('.accommodation-page__make-booking').click(function(){
         console.log('modal clicked');
 
@@ -1851,6 +1795,7 @@ function filteredPageGenerator(x){
 
         priceTotal = nightPrice + mealPrice;
 
+        // generates the booking confirmed modal, appends with the variables created above to display relevant booking information & costs
         $('#modalContent').empty();
         $('#modalContent').append(
             `
@@ -1929,5 +1874,29 @@ function filteredPageGenerator(x){
 // creates accommodation pages for each stay - end
 // -------------------------------------------------------------
 
+function homePage(event){
+    event.preventDefault();
 
-searchIcon.addEventListener('click', filterFunction);
+    landingSection.classList.remove('top-position');
+    landingSection.classList.add('landing-section');
+    availableStays.classList.remove('hide');
+    availableCardContainer.classList.remove('hide');
+    filteredStays.classList.add('hide');
+    filteredSection.classList.add('hide');
+    $('#accommodationPage').empty();
+
+    // resets the dates/guests in the search bar
+    document.getElementById('searchLocation').value='Add dates';
+
+    document.getElementById('searchBarCheckIn').value='Add dates';
+
+    document.getElementById('searchBarCheckOut').value='Add dates';
+    
+    document.getElementById('searchBarGuests').value='Add guests';
+    console.log(guestsGlobal);
+}
+
+
+
+searchIcon.addEventListener('click', searchCheck);
+stayNZLogo.addEventListener('click', homePage);

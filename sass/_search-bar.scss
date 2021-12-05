@@ -65,6 +65,7 @@
 
     &__search-icon{
         height: 2rem;
+        cursor: pointer;
     }
 
     &__input{
@@ -76,4 +77,31 @@
 
 .search-initial-position{
     max-width: 90%;
+}
+
+@media only screen and (max-width: 600px){
+    .search-bar {
+        max-width: 90%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        &__div {
+            max-width: 23%;
+        }
+
+        &__label {
+            font-size: 1rem;
+        }
+
+        &__input {
+            font-size: 1rem;
+        }
+    }
+
+    .search-initial-position {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
 }

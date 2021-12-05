@@ -240,7 +240,8 @@
         height: 10vh;
         display: flex;
         justify-content: flex-start;
-        padding-bottom: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     &__contact-div {
@@ -255,11 +256,34 @@
         margin-right: 1rem;
     }
 
+    &__host-info {
+        padding-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
     &__contact-btn {
         width: 7rem;
         @include text;
         @include white-filter-select;
         // border-radius: 1px;
         padding: .5rem;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px){
+    .accommodation-page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .accommodation-page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        &__contact-div-top {
+            margin-bottom: 4rem;
+        }
     }
 }

@@ -41,8 +41,8 @@
     width: 100vw;
     min-height: 50vh;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    padding-left: 3rem;
 }
 
 .accommodation-card {
@@ -73,5 +73,34 @@
     &__location {
         @include text;
         color: $grey;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px){
+    .available-stays {
+        &__filters {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        &__h1 {
+            width: 20rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .available-stays {
+        &__filters {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        &__h1 {
+            width: 40rem;
+            font-size: 1.7rem;
+        }
     }
 }
