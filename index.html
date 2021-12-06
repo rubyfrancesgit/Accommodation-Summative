@@ -19,15 +19,15 @@
     <body>
 
         <nav class="top-nav" id="topNav">
-            <h1 class="top-nav__h1" id="stayNZLogo">Stay NZ</h1>
+            <h1 class="top-nav__h1" onClick="window.location.reload();" id="stayNZLogo">Stay NZ</h1>
             <img class="top-nav__img" src="./images/user-profile.svg" alt="profile icon">
         </nav>
 
-        <section class="landing-section" id="landingSection">
+        <div class="landing-section" id="landingSection">
             <div class="search-bar search-initial-position" id="searchBar">
                 <div class="search-bar__location-div search-bar__div">
-                    <label class="search-bar__label" for="location">Location</label>
-                    <select class="search-bar__location-select" name="location" id="searchLocation">
+                    <label class="search-bar__label" for="searchLocation">Location</label>
+                    <select class="search-bar__location-select" name="searchLocation" id="searchLocation">
                         <option value="Where are you going?">Where are you going?</option>
                         <option value="Auckland">Auckland</option>
                         <option value="Wellington">Wellington</option>
@@ -36,16 +36,16 @@
                     </select>
                 </div>
                 <div class="search-bar__check-in-div search-bar__div" id="searchBarCheckIn">
-                    <label class="search-bar__label" for="check-in">Check-in</label>
-                    <input class="search-bar__input" autocomplete="off" type="text" name="check-in" id="searchCheckIn" placeholder="Add dates">
+                    <label class="search-bar__label" for="searchCheckIn">Check-in</label>
+                    <input class="search-bar__input" autocomplete="off" type="text" name="searchCheckIn" id="searchCheckIn" placeholder="Add dates">
                 </div>
                 <div class="search-bar__check-out-div search-bar__div" id="searchBarCheckOut">
-                    <label class="search-bar__label" for="check-out">Check-out</label>
-                    <input class="search-bar__input" autocomplete="off" type="text" name="check-out" id="searchCheckOut" placeholder="Add dates">
+                    <label class="search-bar__label" for="searchCheckOut">Check-out</label>
+                    <input class="search-bar__input" autocomplete="off" type="text" name="searchCheckOut" id="searchCheckOut" placeholder="Add dates">
                 </div>
                 <div class="search-bar__guests-div search-bar__div"  id="searchBarGuests">
-                    <label class="search-bar__label" for="guests">Guests</label>
-                    <select class="search-bar__guest-select" name="guests" id="guestSelect">
+                    <label class="search-bar__label" for="guestSelect">Guests</label>
+                    <select class="search-bar__guest-select" name="guestSelect" id="guestSelect">
                         <option value="Add guests">Add guests</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -57,7 +57,7 @@
                     <img class="search-bar__search-icon" id="searchIcon" src="./images/search.svg" alt="search icon">
                 </div>
             </div>
-        </section>
+        </div>
 
         <section class="available-stays" id="availableStays">
             <h1 class="available-stays__h1">Available stays</h1>
@@ -79,15 +79,14 @@
                 <button class="available-stays__breakfast available-stays__btn" id="breakfastAvailable">Breakfast</button>
                 <button class="available-stays__pool available-stays__btn" id="poolAvailable">Pool</button>
                 <button class="available-stays__playground available-stays__btn" id="playgroundAvailable">Playground</button>
-                <button class="available-stays__parking available-stays__btn" id="parkingAvailable">Parking</button>
                 <button class="available-stays__reset available-stays__btn" id="resetAvailable">Reset Search</button>
             </div>
         </section>
 
-        <section class="available-card-container" id="availableCardContainer">
-        </section>
+        <div class="available-card-container" id="availableCardContainer">
+        </div>
 
-        <section class="filtered-stays hide" id="filteredStays">
+        <div class="filtered-stays hide" id="filteredStays">
             <div class="filtered-stays__filters">
                 <select class="available-stays__sort-price" id="sortPriceFiltered">
                     <option value="sort">Sort by price</option>
@@ -108,16 +107,16 @@
                 <button class="available-stays__playground available-stays__btn" id="playgroundFiltered">Playground</button>
                 <button class="available-stays__reset available-stays__btn" id="resetFiltered">Reset</button>
             </div>
-        </section>
+        </div>
 
-        <section class="filtered-section hide" id="filteredSection">
+        <div class="filtered-section hide" id="filteredSection">
             <div class="filtered-section__left" id="filteredCardContainer">
             </div>
             <div class="filtered-section__right" id="map"></div>
-        </section>
+        </div>
 
-        <section class="accommodation-page" id="accommodationPage">
-        </section>
+        <div class="accommodation-page" id="accommodationPage">
+        </div>
 
         <div class="modal" id="exampleModalCenter" tabindex="-1">
             <div class="modal-dialog">

@@ -7901,21 +7901,13 @@ body {
 
 @media only screen and (max-width: 600px) {
   .search-bar {
-    max-width: 90%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap; }
+    max-width: 90%; }
     .search-bar__div {
       max-width: 23%; }
     .search-bar__label {
       font-size: 1rem; }
     .search-bar__input {
-      font-size: 1rem; }
-
-  .search-initial-position {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap; } }
+      font-size: 1rem; } }
 .landing-section {
   width: 100vw;
   height: 60vh;
