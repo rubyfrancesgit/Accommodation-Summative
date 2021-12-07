@@ -257,7 +257,6 @@
     }
 
     &__host-info {
-        padding-top: 1rem;
         margin-bottom: 2rem;
     }
 
@@ -283,7 +282,20 @@
         padding-right: 1rem;
 
         &__contact-div-top {
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        &__booking-div {
+            width: 90%;
+            max-width: 100%;
+        }
+
+        &__sleeping-container {
+            width: 100vw;
+        }
+
+        &__sleeping-arrangement-div {
+            width: 30%;
         }
     }
 }

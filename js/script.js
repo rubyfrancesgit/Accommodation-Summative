@@ -1,29 +1,26 @@
 console.log('linked :)');
 
 // -------------------------------------------------------------
-// Global variables start
+// Global variables - start
 // -------------------------------------------------------------
 
 const landingSection = document.querySelector('#landingSection');
 const availableStays = document.querySelector('#availableStays');
 const availableCardContainer = document.querySelector('#availableCardContainer');
-// const topNav = document.querySelector('#topNav');
-// const searchNav = document.querySelector('#searchNav');
 const filteredStays = document.querySelector('#filteredStays');
 const filteredSection = document.querySelector('#filteredSection');
 const stayNZLogo = document.querySelector('#stayNZLogo');
 const searchIcon = document.querySelector('#searchIcon');
-// const availableArrowIcon = document.querySelector('#availableArrowIcon');
-// const accommodationPage = document.querySelector('#accommodationPage');
+const accommodationPage = document.querySelector('#accommodationPage');
 
 // -------------------------------------------------------------
-// Global variables start
+// Global variables - start
 // -------------------------------------------------------------
 
 
 
 // -------------------------------------------------------------
-// Accommodation object array start
+// Accommodation object array - start
 // -------------------------------------------------------------
 
 let accommodationObjectArray = [
@@ -94,7 +91,7 @@ let accommodationObjectArray = [
         maxNights: 5,
         minGuest: 1,
         maxGuest: 2,
-        description: 'A lovely accommodation option Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione temporibus iste qui numquam? Libero nisi vitae asperiores veniam quibusdam doloribus similique! Explicabo eaque suscipit animi.',
+        description: 'A cosy hotel situated in Auckland Central. Ensuit for each bathroom. A shared longue area and bar. Laundry service available. Check at front desk for local reccommendations. City center property, and only a five minute walk to the shops.',
         sleepingArrangements: `<div class="accommodation-page__sleeping-arrangement-div">
         <img class="accommodation-page__bed-img" src="./images/bed-icon.svg" alt="bed icon">
         <p class="accommodation-page__bedroom-number">Bedroom 1</p>
@@ -798,17 +795,13 @@ let accommodationObjectArray = [
 ];
 
 // -------------------------------------------------------------
-// Accommodation object array end
+// Accommodation object array - end
 // -------------------------------------------------------------
 
 
 
-
-
-
-
 // -------------------------------------------------------------
-// Google maps API key append start
+// Google maps API key append - start
 // -------------------------------------------------------------
 
 const script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer></script>';
@@ -818,18 +811,18 @@ $(document).ready(function(){
 });
 
 // -------------------------------------------------------------
-// Google maps API append end
+// Google maps API append - end
 // -------------------------------------------------------------
 
 
 
 // -------------------------------------------------------------
-// Google maps initMap start
+// Google maps initMap - start
 // -------------------------------------------------------------
 
 function initMap(){
 
-    // search bar check-in and check-out dates start
+    // search bar check-in and check-out dates using Jquery UI datepicker - start 
     $('#searchCheckIn').datepicker({
         dateFormat: 'yy-mm-dd',
         changeMonth: true,
@@ -852,34 +845,33 @@ function initMap(){
         dateFormat: 'yy-mm-dd',
         changeMonth: true
     });
-    // search bar check-in and check-out date end
 
-    // creating map focus point start
+    // creating map focus point
     let newZealand = {lat: -38.87996245321901, lng: 176.11236351323205};
 
     const map = new google.maps.Map(document.getElementById('map'),{
         zoom: 7,
         center: newZealand,
     });
-    // creating map focus point end
 
     // passing map to the markers function so markers can be placed on map
     setMarkers(map);
 }
 
 // -------------------------------------------------------------
-// Google maps initMap end
+// Google maps initMap - end
 // -------------------------------------------------------------
 
 
 
 // -------------------------------------------------------------
-// Map markers start
+// Map markers - start
 // -------------------------------------------------------------
 
 function setMarkers(map){
 
     for(let i =0; i < accommodationObjectArray.length; i++){
+        // appending information from the object array to the information window content variable - using a for loop so the relevant information will append dpending on which marker is in question
         const infoWindowContent = 
         `                
         <div class="filtered-section__card">
@@ -907,10 +899,12 @@ function setMarkers(map){
         </div>
         `;
 
+        // setting the info window content to the above information
         const infoWindow = new google.maps.InfoWindow({
             content: infoWindowContent,
         });
 
+        // getting values from the accommodation object array to create markers on the map for each object
         let accommName = accommodationObjectArray[i].name;
         let accommLat = accommodationObjectArray[i].latitude;
         let accommLng = accommodationObjectArray[i].longitude;
@@ -921,12 +915,14 @@ function setMarkers(map){
             title: accommName,
         });
     
+        // when the mouse hovers over a marker, the information window will pop up
         marker.addListener('mouseover', () => {
             infoWindow.setOptions({
                 disableAutoPan: true,
             });
         });
 
+        // stops the map from moving each time an info window pops up
         marker.addListener('mouseover', () => {
             infoWindow.open({
                 anchor: marker,
@@ -935,23 +931,25 @@ function setMarkers(map){
             });
         });
 
+        // when the mouse hovers over a marker, the information window will close
         marker.addListener('mouseout', () => {
             infoWindow.close();
         });
     }
 }
 // -------------------------------------------------------------
-// Map markers end
+// Map markers - end
 // -------------------------------------------------------------
 
 
 
+// -------------------------------------------------------------
+// Waits until document has loading before running the following code - start
+// -------------------------------------------------------------
 
 $(document).ready(function(){
-    // -------------------------------------------------------------
-    // Displays all accommodation cards on the landing page & searched page start
-    // -------------------------------------------------------------
 
+    // displays all  accommodation cards on the landing page 
     function availableCardLoop(){
         for(let i = 0; i < accommodationObjectArray.length; i++){
             generateAvailableCard(i);
@@ -959,6 +957,7 @@ $(document).ready(function(){
     }
     availableCardLoop();
 
+    // displays all  accommodation cards on the search page 
     function filteredCardLoop(){
         for(let i = 0; i < accommodationObjectArray.length; i++){
             generateSearchCard(i);
@@ -966,13 +965,10 @@ $(document).ready(function(){
     }
     filteredCardLoop();
 
-    // -------------------------------------------------------------
-    // Displays all accommodation cards on the landing page & searched page end
-    // -------------------------------------------------------------
 
 
     // -------------------------------------------------------------
-    // sort by price start
+    // sort by price - start
     // -------------------------------------------------------------
 
     $("#sortPriceAvailable").change(function(){
@@ -1008,8 +1004,8 @@ $(document).ready(function(){
     });
 
     $('#sortPriceFiltered').change(function(){
-
         let sortValue = ($("#sortPriceFiltered").val());
+
         if(sortValue === 'price-low-high'){
             filteredArrayGlobal.sort(function(a,b){
                 let itemA = a.price, itemB = b.price;
@@ -1022,6 +1018,7 @@ $(document).ready(function(){
             });
             allFilteredArraySearchCards();
         }
+
         if(sortValue === 'price-high-low'){
             filteredArrayGlobal.sort(function(a,b){
                 let itemA = a.price, itemB = b.price;
@@ -1034,22 +1031,24 @@ $(document).ready(function(){
             });
             allFilteredArraySearchCards();
         }
+
         if(sortValue === 'reset-sort'){
             allFilteredArraySearchCards();
         }
     });
 
     // -------------------------------------------------------------
-    // sort by price end
+    // sort by price - end
     // -------------------------------------------------------------
 
 
 
     // -------------------------------------------------------------
-    // sort by stay type start
+    // sort by stay type - start
     // -------------------------------------------------------------
 
-    // landing page filters start - these searches fun for loops in order to run through both the accommodationObjectArray and the tags within that object array, checking for specified values 
+    // these searches run two for loops in order to filter through both the accommodationObjectArray and the tags within that object array, checking for specified values
+    // the first four functions are for the landing page filters, the second four functions are for the searched page filters
     $('#accommodationTypeAvaiable').change(function(a, b){
 
         let sortValueAvailable = ($("#accommodationTypeAvaiable").val());
@@ -1097,9 +1096,7 @@ $(document).ready(function(){
             allAvailableCards();
         }
     });
-    // landing page filters end
 
-    //search page filters start
     $('#accommodationTypeFiltered').change(function(a,b){
         let sortValueFiltered = ($('#accommodationTypeFiltered').val());
 
@@ -1139,19 +1136,19 @@ $(document).ready(function(){
             allFilteredArraySearchCards();
         }
     });
-    //search page filters end
 
     // -------------------------------------------------------------
-    // sort by stay type end
+    // sort by stay type - end
     // -------------------------------------------------------------
 
 
 
     // -------------------------------------------------------------
-    // filter buttons start
+    // filter buttons - start
     // -------------------------------------------------------------
 
-    // landing page buttons start
+    // once a button is clicked, two for loops are run to filter through both the accommodationObjectArray and the tags within that object array, checking if values match the value of the button
+    // the first four functions are for the landing page filters, the second four functions are for the searched page filters
     $('#breakfastAvailable').click(function(){
 
         $('#availableCardContainer').empty();
@@ -1209,10 +1206,7 @@ $(document).ready(function(){
         $('#availableCardContainer').empty();
         allAvailableCards(); 
     });
-    // landing page buttons end
 
-
-    // search page buttons start
     $('#breakfastFiltered').click(function(){
 
         $('#filteredCardContainer').empty();
@@ -1257,12 +1251,16 @@ $(document).ready(function(){
         $('#filteredCardContainer').empty();
         allFilteredArraySearchCards(); 
     });
-    // search page buttons end
 
     // -------------------------------------------------------------
-    // filter buttons end
+    // filter buttons - end
     // -------------------------------------------------------------
 
+
+
+    // -------------------------------------------------------------
+    // checks all required search bar fields have been filled - start
+    // -------------------------------------------------------------
 
     function searchCheck(event){
         event.preventDefault();
@@ -1275,12 +1273,17 @@ $(document).ready(function(){
 
         let checkOutDate = new Date ($('#searchCheckOut').val());
 
+        // if all fields are not complete, alerts user, but if all fields are complete the filterFunction is called to prepare the search page 
         if((checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date') || (guests === 'Add guests') || (location === 'Where are you going?')){
             alert('Please fill in all fields to search');
         } else {
             filterFunction();
         }
     }
+
+    // -------------------------------------------------------------
+    // checks all required search bar fields have been filled - end
+    // -------------------------------------------------------------
 
 
     // -------------------------------------------------------------
@@ -1349,7 +1352,7 @@ $(document).ready(function(){
     }
 
     // -------------------------------------------------------------
-    // search filtering end
+    // search filtering - end
     // -------------------------------------------------------------
 
 
@@ -1456,11 +1459,11 @@ $(document).ready(function(){
                     filteredPageGenerator(i);
                 }
             }
-
             filteredStays.classList.add('hide');
             filteredSection.classList.add('hide');
         });
     }
+
 
 
     // -------------------------------------------------------------
@@ -1532,15 +1535,13 @@ $(document).ready(function(){
             landingSection.classList.add('landing-section');
             availableStays.classList.remove('hide');
             availableCardContainer.classList.remove('hide');
-
-            // emptying the accommodation page so it's not visible from the landing page set up
-            $('#accommodationPage').empty();
+            accommodationPage.classList.add('hide');
         });
-
     });
 
     // generates the accommodation stay page for the cards on the landing page, appends all relevent information
     function accommodationPageGenerator(x){
+        accommodationPage.classList.remove('hide');
         $('#accommodationPage').empty();
         $('#accommodationPage').append(
             `
@@ -1614,6 +1615,7 @@ $(document).ready(function(){
 
     // generates the accommodation stay page for the cards on the searched page, appends all relevent information
     function filteredPageGenerator(x){
+        accommodationPage.classList.remove('hide');
         $('#accommodationPage').empty();
         $('#accommodationPage').append(
             `
@@ -1730,22 +1732,6 @@ $(document).ready(function(){
 
             let breakfast = $('#breakfast').val();
 
-            if(breakfast === 'breakfast'){
-                // if no default breakfast option is selected, remove the data-toggle modal attribute to stop the booking modal popping up, and alert the user to select breakfast option
-                $('.accommodation-page__make-booking').removeAttr('data-toggle', 'modal');
-                alert('Please select an option for breakfast before continuing');
-            } else if(breakfast === 'yes'){
-                // adds data-togle back in so modal pops up
-                $('.accommodation-page__make-booking').attr('data-toggle', 'modal');
-                let breakfastGuests = 'Yes';
-                window.breakfastGuestsGlobal = breakfastGuests;
-            } else if (breakfast === 'no'){
-                // adds data-togle back in so modal pops up
-                $('.accommodation-page__make-booking').attr('data-toggle', 'modal');
-                let breakfastGuests = 'No';
-                window.breakfastGuestsGlobal = breakfastGuests;
-            }
-
             // getting individual data of day, month, year
             let checkInDay = checkInDate.getDate(),
             checkInMonth = checkInDate.getMonth(),
@@ -1767,9 +1753,36 @@ $(document).ready(function(){
 
             const nightPrice = accommodationObjectArray[x].price * dayDifference;
 
-            const mealPrice = accommodationObjectArray[x].mealPrice * guests * dayDifference;
+            if(breakfast === 'breakfast'){
+                // if no default breakfast option is selected, remove the data-toggle modal attribute to stop the booking modal popping up, and alert the user to select breakfast option
+                $('.accommodation-page__make-booking').removeAttr('data-toggle', 'modal');
+                alert('Please select an option for breakfast before continuing');
+            } else if(breakfast === 'yes'){
+                // adds data-togle back in so modal pops up
+                $('.accommodation-page__make-booking').attr('data-toggle', 'modal');
 
-            priceTotal = nightPrice + mealPrice;
+                let breakfastGuests = 'Yes';
+                window.breakfastGuestsGlobal = breakfastGuests;
+
+                // equations for the cost of guests stay and breakfast
+                const mealPrice = accommodationObjectArray[x].mealPrice * guests * dayDifference;
+                window.mealPriceGlobal = mealPrice;
+
+                priceTotal = nightPrice + mealPrice;
+                window.priceTotalGlobal = priceTotal;
+
+            } else if (breakfast === 'no'){
+                // adds data-togle back in so modal pops up
+                $('.accommodation-page__make-booking').attr('data-toggle', 'modal');
+                let breakfastGuests = 'No';
+                window.breakfastGuestsGlobal = breakfastGuests;
+
+                const mealPrice = 0;
+                window.mealPriceGlobal = mealPrice;
+
+                priceTotal = nightPrice + mealPrice;
+                window.priceTotalGlobal = priceTotal;
+            }
 
             // generates the booking confirmed modal, appends with the variables created above to display relevant booking information & costs
             $('#modalContent').empty();
@@ -1799,7 +1812,7 @@ $(document).ready(function(){
                                     <img class="filtered-section__star" src="./images/star.svg" alt="star icon">
                                     <p class="filtered-section__rating">${filteredArrayGlobal[x].rating}</p>
                                 </div>
-                                <p class="filtered-section__price"><b>$${filteredArrayGlobal[x].price}</b> / night</p>
+                                <p class="filtered-section__price"><b>$${mealPriceGlobal}</b> / night</p>
                             </div>
                         </div>
                     </div>
@@ -1834,11 +1847,11 @@ $(document).ready(function(){
                                 <p class="modal__p-grey">x ${guests} guests</p>
                                 <p class="modal__p-grey">x ${dayDifference} days</p>
                             </div>
-                            <p class="modal__p">$${mealPrice}</p>
+                            <p class="modal__p">$${mealPriceGlobal}</p>
                         </div>
                         <div class="modal__price-total-div">
                             <p class="modal__heading-2">Total</p>
-                            <p class="modal__heading-2">$${priceTotal}</p>
+                            <p class="modal__heading-2">$${priceTotalGlobal}</p>
                         </div>
                     </div>
                 `
@@ -1852,20 +1865,16 @@ $(document).ready(function(){
 
 
 
-    // -------------------------------------------------------------
-    // reloads the page when logo is clicked - start
-    // -------------------------------------------------------------
-
+    // reloads the page when logo is clicked
     function homePage(){
         reload = location.reload();
     }
 
-    // -------------------------------------------------------------
-    // reloads the page when logo is clicked - start
-    // -------------------------------------------------------------
-
-
-
+    // runs functions when specified icons are clicked
     searchIcon.addEventListener('click', searchCheck);
     stayNZLogo.addEventListener('click', homePage, false);
 });
+
+// -------------------------------------------------------------
+// Waits until document has loading before running the following code - end
+// -------------------------------------------------------------

@@ -1,10 +1,11 @@
 .modal-content {
     padding: 5rem;
-    width: 50vw;
+    // width: 50vw;
     @include center;
 }
 
 .modal {
+
     &__heading-2 {
         @include heading;
         font-size: 1.5rem;
@@ -58,5 +59,11 @@
         display: flex;
         justify-content: space-between;
         margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .modal-content {
+        width: 100vw;
     }
 }

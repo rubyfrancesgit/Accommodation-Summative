@@ -8059,7 +8059,6 @@ body {
     height: 100%;
     background: lightblue; }
   .filtered-section__card {
-    width: 100%;
     height: 20rem;
     display: flex;
     justify-content: center;
@@ -8351,7 +8350,6 @@ body {
     width: 7rem;
     margin-right: 1rem; }
   .accommodation-page__host-info {
-    padding-top: 1rem;
     margin-bottom: 2rem; }
   .accommodation-page__contact-btn {
     width: 7rem;
@@ -8371,7 +8369,14 @@ body {
     padding-left: 1rem;
     padding-right: 1rem; }
     .accommodation-page__contact-div-top {
-      margin-bottom: 4rem; } }
+      margin-bottom: 2rem; }
+    .accommodation-page__booking-div {
+      width: 90%;
+      max-width: 100%; }
+    .accommodation-page__sleeping-container {
+      width: 100vw; }
+    .accommodation-page__sleeping-arrangement-div {
+      width: 30%; } }
 .hide {
   display: none; }
 
@@ -8391,7 +8396,6 @@ body {
 
 .modal-content {
   padding: 5rem;
-  width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -8447,5 +8451,9 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem; }
+
+@media only screen and (max-width: 600px) {
+  .modal-content {
+    width: 100vw; } }
 
 /*# sourceMappingURL=style.css.map */
